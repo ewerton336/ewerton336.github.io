@@ -1,104 +1,127 @@
+<!--
+___________                      __                 
+\_   _____/_  _  __ ____________/  |_  ____   ____  
+ |    __)_\ \/ \/ // __ \_  __ \   __\/  _ \ /    \ 
+ |        \\     /\  ___/|  | \/|  | (  <_> )   |  \
+/_______  / \/\_/  \___  >__|   |__|  \____/|___|  /
+        \/             \/                        \/ 
+        Bem vindo ao meu código! Verá que é coisa simples. Qualquer coisa é só chamar
+        no whatsapp (13) 99782-7870 ;)
+       -->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Site Ewerton Guimarães</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="codes/arquivos.css">
+  <script src="codes/jquery.js"></script>
+  <script src="codes/popper.min.js"></script>
+  <script src="codes/bootstrap.min.js"></script>
   <style>
-  .fakeimg {
-    height: 200px;
-    background: #aaa;
-  }
-  .fundo-carousel {
-    background-color: rgb(255, 253, 253);
-  }
+    .fakeimg {
+      height: 200px;
+      background: #aaa;
+    }
 
-  .centralizado{
-     text-align: center;
-}
+    .fundo-carousel {
+      background-color: rgb(255, 253, 253);
+    }
 
+    .centralizado {
+      text-align: center;
+    }
   </style>
 </head>
+
 <body class="text-light bg-dark">
 
+
+  <!-- FUNÇÃO DE CLICAR E "DESLIZAR" A PAGINA -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
-  $(document).ready(function(){
-    // Add smooth scrolling to all links
-    $("a").on('click', function(event) {
-  
-      // Make sure this.hash has a value before overriding default behavior
-      if (this.hash !== "") {
-        // Prevent default anchor click behavior
-        event.preventDefault();
-  
-        // Store hash
-        var hash = this.hash;
-  
-        // Using jQuery's animate() method to add smooth page scroll
-        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 800, function(){
-     
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          window.location.hash = hash;
-        });
-      } // End if
+    $(document).ready(function () {
+      // Add smooth scrolling to all links
+      $("a").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
     });
-  });
   </script>
 
 
 
-<!-- MINHA BARRA DE NAVEGAÇÃO -->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <div class="btn-group">
-        <a href="#" class="btn btn-dark" role="button">Inicio</a>
-        <a href="#sobre-mim" class="btn btn-dark" role="button">Sobre mim</a>
-        <a href="#habilidades" class="btn btn-dark" role="button">Minhas Habilidades</a>
-        <a href="#list-group" class="btn btn-dark" role="button">Modelo list group</a>
-        <a href="#collapse" class="btn btn-dark" role="button">Collapse</a>
-        </div>
+  <!-- MINHA BARRA DE NAVEGAÇÃO -->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <div class="btn-group">
+            <a href="#" class="btn btn-dark" role="button">Inicio</a>
+            <a href="sobre-mim.html" class="btn btn-dark" role="button">Sobre mim</a>
+            <a href="#habilidades" class="btn btn-dark" role="button">Minhas Habilidades</a>
+            <a href="#exp" class="btn btn-dark" role="button">Experiências Anteriores</a>
+            <a href="maps.html" class="btn btn-dark" role="button">Minha Localização</a>
+          </div>
         <li class="nav-item dropdown btn-dark text-white">
           <a class="nav-link dropdown-toggle btn-dark text-white" href="#" id="navbardrop" data-toggle="dropdown">
             Contato
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item " href="http://www.facebook.com/ewertonpg/" target="_blank"><img class=rounded-circle src="images/fb.png" alt="HTML tutorial" style="width:32px;height:32px;">  Facebook</a>
-            <a class="dropdown-item " href="http://www.facebook.com/ewertonpg/" target="_blank"><img class=rounded-circle src="images/linkedin.webp" alt="HTML tutorial" style="width:32px;height:32px;">  Linkedin</a>
-            <a class="dropdown-item " href="http://www.facebook.com/ewertonpg/" target="_blank"><img class=rounded-circle src="images/whats.png" alt="HTML tutorial" style="width:32px;height:32px;">  WhatsApp</a>
+            <a class="dropdown-item " href="http://www.facebook.com/ewertonpg/" target="_blank"><img
+                class=rounded-circle src="images/fb.png" alt="HTML tutorial" style="width:32px;height:32px;">
+              Facebook</a>
+            <a class="dropdown-item " href="http://www.facebook.com/ewertonpg/" target="_blank"><img
+                class=rounded-circle src="images/linkedin.webp" alt="HTML tutorial" style="width:32px;height:32px;">
+              Linkedin</a>
+            <a class="dropdown-item " href="http://www.facebook.com/ewertonpg/" target="_blank"><img
+                class=rounded-circle src="images/whats.png" alt="HTML tutorial" style="width:32px;height:32px;">
+              WhatsApp</a>
           </div>
         </li>
-      </li> 
-    </ul>
-  </div> 
-</nav>
-<hr color="color: #f00;
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <hr color="color: #f00;
 background-color: #f00;
 height: 50px;">
-</div>
+  </div>
 
 
-
-<div class="container">
-  <div class="col-sm-12x">
-        <br><br><h1 class="text-center">Bem vindo ao meu novo Website!</h1>
+  <!-- MENU DE BOAS VINDAS -->
+ 
+    <div class="container">
+      <div class="col-sm-12x">
+        <br><br>
+        <h1 class="text-center">Bem vindo ao meu novo Website!</h1>
         <hr color="color: black;
         background-color: black;
         height: 5px;">
         <h5>Praia Grande, 25 de maio de 2020,</h5>
         <h6 class="text-justify">Seja muito bem vindo ao meu novo site!
-           É com imenso prazer receber você, para conhecer o meu trabalho. <br>
-  Aqui você encontratá um breve resumo do meu currículo,
-   minhas experiências atuais e anteriores, além de meus dados para contato. <br>
+          É com imenso prazer receber você, para conhecer o meu trabalho. <br>
+          Aqui você encontratá um breve resumo do meu currículo,
+          minhas experiências atuais e anteriores, além de meus dados para contato. <br>
           O objetivo desse site é passar todas as minhas informações profissionais.
           Espero que você goste.
           <br> Se tiver algum interesse, pode entrar em contato comigo, pelo meu email, WhatsApp ou Telefone.
@@ -106,118 +129,180 @@ height: 50px;">
           Agradeço a sua visita e espero ver você em breve.
           <br>
           Abraços,<br> </h6>
-       <h5>Ewerton Guimarães</h5>
+        <h5>Ewerton Guimarães</h5>
         <img src="images/sistemas.jpg" width="100%" height="100%" class="rounded" alt="Cinque Terre">
-        
-        
+      </div>
+
+    </div>
+ 
+  </div>
+ 
+
+  <!-- MENU SOBRE MIM -->
+  <div class="container" style="margin-top:30px">
+    <div class="row">
+      <div class="col-sm-4">
+
+        <div class="card text-light bg-dark">
+          <div class="card-body">
+            <div class="text-center ">
+              <h2 id=sobre-mim>Sobre mim</h2>
+            </div>
+            <div class="text-center"><img src="images/ewerton.jpg" class="rounded-circle" width="60%" height="60%">
+            </div>
+            <h6 class="text-center"> Prazer, Ewerton Guimarães!<br> </h6>
+            <p class="text-justify">Tenho 25 anos, Atualmente graduado em Gestão Empresarial pela Fatec de Praia Grande,
+              e graduando em Análise e Desenvolvimento de sistemas, também pela Fatec de Praia Grande.</p>
+          </div>
+        </div>
+        <!-- BARRA DE PROGRESSO DE HABILIDADES -->
+        <h3 id=habilidades>Minhas Habilidades</h3>
+        <h6>Microsft Office:</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:80%"></div>
+        </div><br>
+        <h6>Design Web:</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%"></div>
+        </div><br>
+        <h6>Facudade Gestão Empresarial:</h6>
+        <div class="progress">
+          <div class="progress-bar bg-success progress-bar-striped" style="width:100%"></div>
+        </div><br>
+        <h6>(1º Semestre) Faculdade Análise e desenvolvimento de sistemas:</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:9%"></div>
+        </div> <br>
+        <h6>Inglês:</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:43%"></div>
+        </div> <br>
+      </div>
+
+
+
+      <div class="col-sm-8">
+        <h2>Mas por quê Análise e Desenvolvimento de sistemas?</h2>
+        <!-- <h5>Title description, Dec 7, 2017</h5> -->
+        <h5>Resumidamente? Porque eu amo a área de Informática!</h5>
+        <p class="text-justify">Instalação e reparação de sistemas, programas e elaboração de sites sempre foi uma área
+          na qual eu me interessei.
+          Dês de os 17 anos eu já vivia indo na casa de amigos para fazer instalação do windows e drivers,
+          instalção de roteadores entre outros.
+          Adoro comprar periféricos como controle de video games e placas com defeitos para tentar arrumar
+          (coisa que até hoje faço) e assim poder utilizá-los ou vender. <br>
+          Como já dizia Platão, o homem é detentor de todo conhecimento, só precisa despertá-lo. E é isso que estou
+          fazendo.
+          Procuro todos os dias novos desafios e novas oportunidades. E quem diria que um dia estaria criando um site
+          pelo visual Studio,
+          e não por algum criador de site pronto? <br>
+          Confesso, talvez este website não seja o site com o melhor design possível, mas cada ferramenta utilizada aqui
+          foi usada com muito carinho,
+          e espero melhorar a ponto de ter um site pessoal de forma totalmente impecável.
+        </p>
+        <br>
+
+        <!-- CAROUSEL -->
+        <h2>Últimos empregos:</h2>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <div class="fundo-carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="img-fluid" w src="images/pref.png" width="100%" height="100%" alt="Primeiro Slide">
+                <div class="carousel-caption d-none d-md-block">
+                  <p class="text-white bg-dark">PREFEITURA DE PRAIA GRANDE</p>
+                  <h5 class="text-white bg-dark">EMPREGO ATUAL</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="img-fluid" w src="images/ecommerce2.png" width="100%" height="100%" alt="Primeiro Slide">
+                <div class="carousel-caption d-none d-md-block">
+                  <p class="text-white bg-dark">ECOMMERCE</p>
+                  <h5 class="text-white bg-dark">2013 A 2019</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="img-fluid" w src="images/voce.png" width="100%" height="100%" alt="Primeiro Slide">
+                <div class="carousel-caption d-none d-md-block">
+                  <p class="text-white bg-dark">NA SUA EMPRESA</p>
+                  <h5 class="text-white bg-dark">AMANHÃ</h5>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Próximo</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
 
-<div class="container" style="margin-top:30px">
-  <div class="row">
-    <div class="col-sm-4">
-    
-    <div class="card text-light bg-dark">
-    <div class="card-body"> 
-      <div class="text-center "><h2 id=sobre-mim>Sobre mim</h2></div>
-        <div class="text-center"><img src="images/ewerton.jpg" class="rounded-circle" width="200px" height="200px"> </div>
-      <h6 class="text-center"> Prazer, Ewerton Guimarães!<br> </h6>
-      <p class="text-justify">Tenho 25 anos, Atualmente graduado em Gestão Empresarial pela Fatec de Praia Grande, 
-      e graduando em Análise e Desenvolvimento de sistemas, também pela Fatec de Praia Grande.</p>
-    </div>
-    </div>      
-      <!-- BARRA DE PROGRESSO DE HABILIDADES -->
-      <h3 id=habilidades>Minhas Habilidades</h3>
-      <h6>Microsft Office:</h6>
-      <div class="progress">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:80%"></div>
-      </div><br>
-      <h6>Design Web:</h6>
-      <div class="progress">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%"></div>
-      </div><br>
-      <h6>Facudade Gestão Empresarial:</h6>
-      <div class="progress">
-        <div class="progress-bar bg-success progress-bar-striped" style="width:100%"></div>
-      </div><br>
-      <h6>(1º Semestre) Faculdade Análise e desenvolvimento de sistemas:</h6>
-      <div class="progress">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:9%"></div>
-      </div> <br>
-      <h6>Inglês:</h6>
-      <div class="progress">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:43%"></div>
-      </div> <br>
-     </div>
-    
-     
-    
-     <div class="col-sm-8">
-      <h2>Mas por quê Análise e Desenvolimento de sistemas?</h2>
-      <!-- <h5>Title description, Dec 7, 2017</h5> -->
-      <h5>Resumidamente? Porque eu amo a área de Informática!</h5>
-      <p class="text-justify">Instalação e reparação de sistemas, programas e elaboração de sites sempre foi uma área na qual eu me interessei.
-      Dês dos 17 anos eu já vivia indo na casa de amigos para fazer instalação do windows e drivers, 
-      instalção de roteadores entre outros.
-      Adoro comprar periféricos como controle de video games e placas com defeitos para tentar arrumar
-      (coisa que até hoje faço) e assim poder utilizá-los ou vender. <br>
-      Como já dizia Platão, o homem é detentor de todo conhecimento, só precisa despertá-lo. E é isso que estou fazendo. 
-      Procuro todos os dias novos desafios e novas oportunidades. E quem diria que um dia estaria criando um site pelo visual Studio, 
-      e não por algum criador de site pronto? <br>
-      Confesso, talvez este website não seja o site com o melhor design possível, mas cada ferramenta utilizada aqui foi usada com muito carinho,
-      e espero melhorar a poto de ter um site pessoal de forma totalmente impecável. 
-      </p>
-      <br>
+  </div>
+  </div>
 
-      <!-- CAROUSEL -->
-      <h2>Últimos empregos:</h2>
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <div class="fundo-carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="img-fluid" w src="images/pref.png" width="100%" height="100%" alt="Primeiro Slide">
-            <div class="carousel-caption d-none d-md-block">
-              <p class="text-white bg-dark">PREFEITURA DE PRAIA GRANDE</p>
-              <h5 class="text-white bg-dark">EMPREGO ATUAL</h5>
+  <div class="container">
+    <div class="col-sm-12x">
+      <br><br>
+      <h1 class="text-center">Bem vindo ao meu novo Website!</h1>
+      <hr color="color: black;
+              background-color: black;
+              height: 5px;">
+      <h5>Praia Grande, 25 de maio de 2020,</h5>
+      <h6 class="text-justify">Seja muito bem vindo ao meu novo site!
+        É com imenso prazer receber você, para conhecer o meu trabalho. <br>
+        Aqui você encontratá um breve resumo do meu currículo,
+        minhas experiências atuais e anteriores, além de meus dados para contato. <br>
+        O objetivo desse site é passar todas as minhas informações profissionais.
+        Espero que você goste.
+        <br> Se tiver algum interesse, pode entrar em contato comigo, pelo meu email, WhatsApp ou Telefone.
+        <br>
+        Agradeço a sua visita e espero ver você em breve.
+        <br>
+        Abraços,<br> </h6>
+      <h5>Ewerton Guimarães</h5>
+      <img src="images/sistemas.jpg" width="100%" height="100%" class="rounded" alt="Cinque Terre"> <br> <br>
+
+      <!-- inicio  das minhas experiencias anteriores -->
+      <h3 id=exp>Minhas Experiências anteriores</h3>
+      <p>Clicando na barra abaixo poderá ver todas as empresas no qual já trabalhei.</p>
+      <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Experiências anteriores
+        (clique para expandir)</button>
+
+      <!-- logo atacadao -->
+
+      <div id="demo" class="collapse">
+        <div class="text-center"><img src="images/atacadao.jpg" class="rounded-circle" width="150px" height="150px">
+          <h2>Atacadão Praia Grande (2010 a 2012)</h2>
+          <p>Durante esse periodo trabalhei como menor aprendiz e efetivado como empacotador.</p> <br>
+
+          <div class="text-center"><img src="images/feira.jpg" class="rounded-circle" width="150px" height="150px">
+            <h2>Feira Livre (2012 a 2014)</h2>
+            <p>Dentro do período de 2 anos atuei como vendedor e ajudante de carga e descarga do caminhão de frutas</p>
+            <br>
+
+            <div class="text-center"><img src="images/logo.jpg" class="rounded" width="200px" height="150px">
+              <h2>Empreendimento próprio - Comércio Eletrônico (2014 a 2019)</h2>
+              <p></p> <br>
+
             </div>
           </div>
-          <div class="carousel-item">
-            <img class="img-fluid" w src="images/ecommerce2.png" width="100%" height="100%" alt="Primeiro Slide">
-            <div class="carousel-caption d-none d-md-block">
-              <p class="text-white bg-dark">ECOMMERCE</p>
-              <h5 class="text-white bg-dark">2013 A 2019</h5>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="img-fluid" w src="images/voce.png" width="100%" height="100%" alt="Primeiro Slide">
-            <div class="carousel-caption d-none d-md-block">
-              <p class="text-white bg-dark">NA SUA EMPRESA</p>
-              <h5 class="text-white bg-dark">AMANHÃ</h5>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Anterior</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Próximo</span>
-        </a>
-      </div>
-      </div>
-</div>
-</div>
+
 
 
 
 
 </body>
+
 </html>

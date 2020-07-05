@@ -1,0 +1,268 @@
+<!--
+___________                      __                 
+\_   _____/_  _  __ ____________/  |_  ____   ____  
+ |    __)_\ \/ \/ // __ \_  __ \   __\/  _ \ /    \ 
+ |        \\     /\  ___/|  | \/|  | (  <_> )   |  \
+/_______  / \/\_/  \___  >__|   |__|  \____/|___|  /
+        \/             \/                        \/ 
+        Bem vindo ao meu código! Verá que é coisa simples. Qualquer coisa é só chamar
+        no whatsapp (13) 99782-7870 ;)
+       -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ewerton - Minha localização</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="codes/arquivos.css">
+    <script src="codes/jquery.js"></script>
+    <script src="codes/popper.min.js"></script>
+    <script src="codes/bootstrap.min.js"></script>
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+
+        .fundo-carousel {
+            background-color: rgb(255, 253, 253);
+        }
+
+        .centralizado {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="text-light bg-dark">
+
+
+    <!-- FUNÇÃO DE CLICAR E "DESLIZAR" A PAGINA -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
+
+
+
+    <!-- MINHA BARRA DE NAVEGAÇÃO -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <div class="btn-group">
+                        <a href="index.html" class="btn btn-dark" role="button">Inicio</a>
+                        <a href="#sobre-mim" class="btn btn-dark" role="button">Sobre mim</a>
+                        <a href="#habilidades" class="btn btn-dark" role="button">Minhas Habilidades</a>
+                        <a href="#exp" class="btn btn-dark" role="button">Experiências Anteriores</a>
+                        <a href="maps.html" class="btn btn-dark" role="button">Minha Localização</a>
+                    </div>
+                <li class="nav-item dropdown btn-dark text-white">
+                    <a class="nav-link dropdown-toggle btn-dark text-white" href="#" id="navbardrop"
+                        data-toggle="dropdown">
+                        Contato
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item " href="http://www.facebook.com/ewertonpg/" target="_blank"><img
+                                class=rounded-circle src="images/fb.png" alt="HTML tutorial"
+                                style="width:32px;height:32px;">
+                            Facebook</a>
+                        <a class="dropdown-item " href="http://www.facebook.com/ewertonpg/" target="_blank"><img
+                                class=rounded-circle src="images/linkedin.webp" alt="HTML tutorial"
+                                style="width:32px;height:32px;">
+                            Linkedin</a>
+                        <a class="dropdown-item " href="http://www.facebook.com/ewertonpg/" target="_blank"><img
+                                class=rounded-circle src="images/whats.png" alt="HTML tutorial"
+                                style="width:32px;height:32px;">
+                            WhatsApp</a>
+                    </div>
+                </li>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <hr color="color: #f00;
+       background-color: #f00;
+       height: 50px;">
+    </div>
+
+
+    <!-- MENU DE BOAS VINDAS -->
+    <div class="container">
+        <div class="col-sm-12x">
+            <br><br>
+            <h1 class="text-center">Minha localização</h1>
+            <hr color="color: black;
+               background-color: black;
+               height: 5px;">
+
+            <h6 class="text-justify"> Abaixo você encontrará a localização do meu emprego atual</h6>
+            <h5>Prefeitura de Praia Grande</h5>
+
+
+            <!-- LOCALIZAÇÃO MAPS -->
+            <iframe {text-align:center;}
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.0084469983913!2d-46.49634434999761!3d-24.030767284375642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce1f81e15d1461%3A0x27fb325fae29bb06!2sAv.%20Pres.%20Kennedy%2C%209000%20-%20Nova%20Mirim%2C%20Praia%20Grande%20-%20SP%2C%2011700-010!5e0!3m2!1spt-BR!2sbr!4v1593717645096!5m2!1spt-BR!2sbr"
+                width="100%" height="400px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                tabindex="0"></iframe>
+
+        </div>
+    </div>
+    </div>
+
+    <!-- MENU SOBRE MIM -->
+    <div class="container" style="margin-top:30px">
+        <div class="row">
+            <div class="col-sm-5">
+
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Empresa</th>
+                            <th scope="col">Entrada</th>
+                            <th scope="col">Saída</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Atacadão</th>
+                            <td>2010</td>
+                            <td>2012</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">Feira Livre</th>
+                            <td>2012</td>
+                            <td>2014</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">Empreendimento próprio</th>
+                            <td>2013</td>
+                            <td>2019</td>
+
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Prefeitura Praia Grande Grande</th>
+                            <td>2019</td>
+                            <td>Atual</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- COLOQUE ABAIXO MAIS COISAS CASO QUEIRA QUE FIQUE NO LADO ESQUERDO DA TELA -->
+                
+
+
+            </div>
+
+
+
+            <div class="col-sm-7">
+                <h2>Sobre Praia Grande </h2>
+
+
+                <p class="text-justify">Praia Grande é um município na Região Metropolitana da Baixada Santista, estado
+                    de São Paulo, Brasil. A população aferida na revisão censitária do IBGE em 2010 era de 262 061
+                    habitantes. Na estimativa do IBGE para 1.º de julho de 2019, a população de Praia Grande era de 325
+                    073 habitantes.[2] É a terceira cidade mais populosa do litoral paulista, depois de São Vicente e
+                    Santos. Com uma área de 149,253 km², a densidade demográfica em 2019 era de 2 178 habitantes/km².[2]
+                    O município é formado pela sede e pelo distrito de Solemar[5][6].
+                </p>
+                <br>
+                <!-- COLOQUE INFORMAÇÕES ABAIXO PARA QUE FIQUE DO LADO DIREITO   -->
+                
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    </div>
+
+    <div class="container">
+        <div class="col-sm-12x">
+            <br><br>
+            <h1 class="text-center">Bem vindo ao meu novo Website!</h1>
+            <hr color="color: black;
+                     background-color: black;
+                     height: 5px;">
+            <h5>Praia Grande, 25 de maio de 2020,</h5>
+            <h6 class="text-justify">Seja muito bem vindo ao meu novo site!
+                É com imenso prazer receber você, para conhecer o meu trabalho. <br>
+                Aqui você encontratá um breve resumo do meu currículo,
+                minhas experiências atuais e anteriores, além de meus dados para contato. <br>
+                O objetivo desse site é passar todas as minhas informações profissionais.
+                Espero que você goste.
+                <br> Se tiver algum interesse, pode entrar em contato comigo, pelo meu email, WhatsApp ou Telefone.
+                <br>
+                Agradeço a sua visita e espero ver você em breve.
+                <br>
+                Abraços,<br> </h6>
+            <h5>Ewerton Guimarães</h5>
+            <img src="images/sistemas.jpg" width="100%" height="100%" class="rounded" alt="Cinque Terre"> <br> <br>
+
+            <!-- inicio  das minhas experiencias anteriores -->
+            <h3 id=exp>Minhas Experiências anteriores</h3>
+            <p>Clicando na barra abaixo poderá ver todas as empresas no qual já trabalhei.</p>
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Experiências
+                anteriores
+                (clique para expandir)</button>
+
+            <!-- logo atacadao -->
+
+            <div id="demo" class="collapse">
+                <div class="text-center"><img src="images/atacadao.jpg" class="rounded-circle" width="150px"
+                        height="150px">
+                    <h2>Atacadão Praia Grande (2010 a 2012)</h2>
+                    <p>Durante esse periodo trabalhei como menor aprendiz e efetivado como empacotador.</p> <br>
+
+                    <div class="text-center"><img src="images/feira.jpg" class="rounded-circle" width="150px"
+                            height="150px">
+                        <h2>Feira Livre (2012 a 2014)</h2>
+                        <p>Dentro do período de 2 anos atuei como vendedor e ajudante de carga e descarga do caminhão de
+                            frutas</p>
+                        <br>
+
+                        <div class="text-center"><img src="images/logo.jpg" class="rounded" width="200px"
+                                height="150px">
+                            <h2>Empreendimento próprio - Comércio Eletrônico (2014 a 2019)</h2>
+                            <p></p> <br>
+
+                        </div>
+                    </div>
+
+
+
+
+
+</body>
+
+</html>
