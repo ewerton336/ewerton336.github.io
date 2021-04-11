@@ -1,6 +1,6 @@
-function ao_clicar() {
-  alert("Em desenvolvimento");
-}
+// function ao_clicar() {
+//   alert("Em desenvolvimento");
+// }
 
 function alterar_elemento() {
   document.getElementById("agradecimento").innerHTML = "ooiiii";
