@@ -37,6 +37,8 @@
    </style>
 </head>
 
+
+
 <body id="corpo" class="text-light bg-dark">
    <!-- FUNÇÃO DE CLICAR E "DESLIZAR" A PAGINA -->
    <script>
@@ -64,19 +66,26 @@
             } // End if
          });
       });
+
+
+      // script do tema escuro
+
+
    </script>
+
+
    <!-- MINHA BARRA DE NAVEGAÇÃO -->
-   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+   <nav class="navbar navbar-expand-sm ">
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
          <ul class="navbar-nav">
             <li class="nav-item">
                <div class="btn-group">
-                  <a href="#" class="btn btn-dark" role="button">Inicio</a>
-                  <a href="#sobre-mim" class="btn btn-dark" role="button">Sobre mim</a>
-                  <a href="#habilidades" class="btn btn-dark" role="button">Minhas Habilidades</a>
-                  <a href="#exp" class="btn btn-dark" role="button">Experiências Anteriores</a>
-            <li class="nav-item dropdown btn-dark text-white">
-               <a class="nav-link dropdown-toggle btn-dark text-white" href="#" id="navbardrop" data-toggle="dropdown">
+                  <a href="#" class="btn" role="button">Inicio</a>
+                  <a href="#sobre-mim" class="btn" role="button">Sobre mim</a>
+                  <a href="#habilidades" class="btn" role="button">Minhas Habilidades</a>
+                  <a href="#exp" class="btn " role="button">Experiências Anteriores</a>
+            <li class="nav-item dropdown  ">
+               <a class="nav-link dropdown-toggle  text-white" href="#" id="navbardrop" data-toggle="dropdown">
                   Contato
                </a>
                <div class="dropdown-menu">
@@ -96,7 +105,7 @@
          </ul>
       </div>
       <div class="custom-control custom-switch float-right">
-         <input type="checkbox" class="custom-control-input" id="darkSwitch" onclick="addvalor()">
+         <input type="checkbox" checked class="custom-control-input" id="darkSwitch" onclick="mudarTema()">
          <label class="custom-control-label" for="darkSwitch"> Modo escuro </label>
       </div>
    </nav>
@@ -108,7 +117,7 @@
    <div class="container">
       <div class="col-sm-12x">
          <br><br>
-         <h1 onclick="ao_clicar()" class="text-center">Bem vindo ao meu Currículo</h1>
+         <h1 class="text-center"> Bem vindo ao meu Currículo </h1>
          <hr color="color: black;
                background-color: black;
                height: 5px;">
