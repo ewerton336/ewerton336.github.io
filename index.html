@@ -1,335 +1,421 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ewerton Guimarães - .NET Developer Portfolio | Modern portfolio showcasing .NET Core, React, and full-stack development projects">
-    <meta name="keywords" content="Ewerton Guimarães, .NET Developer, React, TypeScript, Full Stack Developer, Portfolio">
-    <meta name="author" content="Ewerton Guimarães">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ewerton Guimarães - .NET Developer Portfolio | Modern portfolio showcasing .NET Core, React, and full-stack development projects"
+    />
+    <meta
+      name="keywords"
+      content="Ewerton Guimarães, .NET Developer, React, TypeScript, Full Stack Developer, Portfolio"
+    />
+    <meta name="author" content="Ewerton Guimarães" />
     <title>Ewerton Guimarães | .NET Developer Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
     <!-- Particle Background Canvas -->
     <canvas id="particles-canvas"></canvas>
 
     <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">
-                <span class="logo-text">EG</span>
-            </a>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Início</a></li>
-                <li><a href="#about" class="nav-link">Sobre</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projetos</a></li>
-                <li><a href="#contact" class="nav-link">Contato</a></li>
-            </ul>
-        </div>
+      <div class="nav-container">
+        <a href="#home" class="nav-logo">
+          <span class="logo-text">EG</span>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link active">Início</a></li>
+          <li><a href="#about" class="nav-link">Sobre</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projetos</a></li>
+          <li><a href="#contact" class="nav-link">Contato</a></li>
+        </ul>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    Olá, eu sou <span class="highlight-purple">Ewerton Guimarães</span>
-                </h1>
-                <div class="hero-subtitle">
-                    <span class="typing-text" id="typing-text"></span>
-                    <span class="cursor">|</span>
-                </div>
-                <p class="hero-description">
-                    Desenvolvedor .NET Core/Framework com experiência em criar soluções robustas e escaláveis.
-                    Atualmente explorando o ecossistema React e TypeScript para desenvolvimento full-stack.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">Ver Projetos</a>
-                    <a href="#contact" class="btn btn-secondary">Entre em Contato</a>
-                </div>
-            </div>
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Olá, eu sou <span class="highlight-purple">Ewerton Guimarães</span>
+          </h1>
+          <div class="hero-subtitle">
+            <span class="typing-text" id="typing-text"></span>
+            <span class="cursor">|</span>
+          </div>
+          <p class="hero-description">
+            Desenvolvedor .NET Core/Framework com experiência em criar soluções
+            robustas e escaláveis. Atualmente explorando o ecossistema React e
+            TypeScript para desenvolvimento full-stack.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+            <a href="#contact" class="btn btn-secondary">Entre em Contato</a>
+          </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="mouse"></div>
-        </div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="mouse"></div>
+      </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">01.</span> Sobre Mim
-                <div class="title-line"></div>
-            </h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="fade-in">
-                        Sou um desenvolvedor graduado apaixonado por tecnologia e inovação, com especialização em 
-                        <span class="highlight-green">.NET Core e Framework</span>. Atualmente trabalho na 
-                        <span class="highlight-purple">Becomex LAB</span>, onde contribuo para o desenvolvimento 
-                        de soluções empresariais robustas.
-                    </p>
-                    <p class="fade-in">
-                        Minha jornada no desenvolvimento começou com a curiosidade de entender como as coisas funcionam 
-                        por baixo dos panos. Hoje, essa curiosidade se transformou em paixão por criar aplicações que 
-                        resolvem problemas reais e impactam positivamente a vida das pessoas.
-                    </p>
-                    <p class="fade-in">
-                        Estou constantemente aprendendo e me atualizando com as tecnologias mais recentes. Com experiência
-                        em <span class="highlight-green">desenvolvimento web moderno incluindo React e AngularJS</span>, 
-                        estou sempre explorando novas tecnologias e aprimorando minhas habilidades para me tornar um desenvolvedor ainda mais versátil.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat-item fade-in">
-                            <span class="stat-number">5+</span>
-                            <span class="stat-label">Anos de Experiência</span>
-                        </div>
-                        <div class="stat-item fade-in">
-                            <span class="stat-number">10+</span>
-                            <span class="stat-label">Projetos Concluídos</span>
-                        </div>
-                        <div class="stat-item fade-in">
-                            <span class="stat-number">∞</span>
-                            <span class="stat-label">Vontade de Aprender</span>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">
+          <span class="title-number">01.</span> Sobre Mim
+          <div class="title-line"></div>
+        </h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p class="fade-in">
+              Sou um desenvolvedor graduado apaixonado por tecnologia e
+              inovação, com especialização em
+              <span class="highlight-green">.NET Core e Framework</span>.
+              Atualmente trabalho na
+              <span class="highlight-purple">Becomex LAB</span>, onde contribuo
+              para o desenvolvimento de soluções empresariais robustas.
+            </p>
+            <p class="fade-in">
+              Minha jornada no desenvolvimento começou com a curiosidade de
+              entender como as coisas funcionam por baixo dos panos. Hoje, essa
+              curiosidade se transformou em paixão por criar aplicações que
+              resolvem problemas reais e impactam positivamente a vida das
+              pessoas.
+            </p>
+            <p class="fade-in">
+              Estou constantemente aprendendo e me atualizando com as
+              tecnologias mais recentes. Com experiência em
+              <span class="highlight-green"
+                >desenvolvimento web moderno incluindo React e AngularJS</span
+              >, estou sempre explorando novas tecnologias e aprimorando minhas
+              habilidades para me tornar um desenvolvedor ainda mais versátil.
+            </p>
+            <div class="about-stats">
+              <div class="stat-item fade-in">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Anos de Experiência</span>
+              </div>
+              <div class="stat-item fade-in">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Projetos Concluídos</span>
+              </div>
+              <div class="stat-item fade-in">
+                <span class="stat-number">∞</span>
+                <span class="stat-label">Vontade de Aprender</span>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">02.</span> Habilidades & Tecnologias
-                <div class="title-line"></div>
-            </h2>
-            <div class="skills-grid">
-                <!-- Backend -->
-                <div class="skill-category fade-in">
-                    <h3 class="category-title">Backend</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-icon">C#</div>
-                            <span class="skill-name">C#</span>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">.NET</div>
-                            <span class="skill-name">.NET Core</span>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">ASP</div>
-                            <span class="skill-name">ASP.NET</span>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">API</div>
-                            <span class="skill-name">REST API</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Frontend -->
-                <div class="skill-category fade-in">
-                    <h3 class="category-title">Frontend</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-icon">JS</div>
-                            <span class="skill-name">JavaScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">TS</div>
-                            <span class="skill-name">TypeScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">⚛</div>
-                            <span class="skill-name">React</span>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">NG</div>
-                            <span class="skill-name">AngularJS</span>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">HTML</div>
-                            <span class="skill-name">HTML5</span>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">CSS</div>
-                            <span class="skill-name">CSS3</span>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">SASS</div>
-                            <span class="skill-name">Sass</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Database -->
-                <div class="skill-category fade-in">
-                    <h3 class="category-title">Database</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-icon">MS</div>
-                            <span class="skill-name">MS SQL Server</span>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">MY</div>
-                            <span class="skill-name">MySQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">PG</div>
-                            <span class="skill-name">PostgreSQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">MA</div>
-                            <span class="skill-name">MariaDB</span>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">OR</div>
-                            <span class="skill-name">Oracle</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tools & Others -->
-                <div class="skill-category fade-in">
-                    <h3 class="category-title">Tools & Others</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-icon">GIT</div>
-                            <span class="skill-name">Git</span>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">PY</div>
-                            <span class="skill-name">Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">JAVA</div>
-                            <span class="skill-name">Java</span>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">POST</div>
-                            <span class="skill-name">Postman</span>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">BOOT</div>
-                            <span class="skill-name">Bootstrap</span>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">FLUT</div>
-                            <span class="skill-name">Flutter</span>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">
+          <span class="title-number">02.</span> Habilidades & Tecnologias
+          <div class="title-line"></div>
+        </h2>
+        <div class="skills-grid">
+          <!-- Backend -->
+          <div class="skill-category fade-in">
+            <h3 class="category-title">Backend</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <div class="skill-icon">C#</div>
+                <span class="skill-name">C#</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">.NET</div>
+                <span class="skill-name">.NET Core</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">ASP</div>
+                <span class="skill-name">ASP.NET</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">API</div>
+                <span class="skill-name">REST API</span>
+              </div>
             </div>
+          </div>
+
+          <!-- Frontend -->
+          <div class="skill-category fade-in">
+            <h3 class="category-title">Frontend</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <div class="skill-icon">JS</div>
+                <span class="skill-name">JavaScript</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">TS</div>
+                <span class="skill-name">TypeScript</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">⚛</div>
+                <span class="skill-name">React</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">NG</div>
+                <span class="skill-name">AngularJS</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">HTML</div>
+                <span class="skill-name">HTML5</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">CSS</div>
+                <span class="skill-name">CSS3</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">SASS</div>
+                <span class="skill-name">Sass</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Database -->
+          <div class="skill-category fade-in">
+            <h3 class="category-title">Database</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <div class="skill-icon">MS</div>
+                <span class="skill-name">MS SQL Server</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">MY</div>
+                <span class="skill-name">MySQL</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">PG</div>
+                <span class="skill-name">PostgreSQL</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">MA</div>
+                <span class="skill-name">MariaDB</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">OR</div>
+                <span class="skill-name">Oracle</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools & Others -->
+          <div class="skill-category fade-in">
+            <h3 class="category-title">Tools & Others</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <div class="skill-icon">GIT</div>
+                <span class="skill-name">Git</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">PY</div>
+                <span class="skill-name">Python</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">JAVA</div>
+                <span class="skill-name">Java</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">POST</div>
+                <span class="skill-name">Postman</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">BOOT</div>
+                <span class="skill-name">Bootstrap</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">FLUT</div>
+                <span class="skill-name">Flutter</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">03.</span> Projetos em Destaque
-                <div class="title-line"></div>
-            </h2>
-            <div class="projects-grid" id="projects-container">
-                <!-- Projects will be loaded dynamically from GitHub API -->
-                <div class="loading-spinner">
-                    <div class="spinner"></div>
-                    <p>Carregando projetos do GitHub...</p>
-                </div>
-            </div>
-            <div class="projects-footer">
-                <a href="https://github.com/ewerton336?tab=repositories" target="_blank" class="btn btn-outline">
-                    Ver Todos os Projetos no GitHub
-                </a>
-            </div>
+      <div class="container">
+        <h2 class="section-title">
+          <span class="title-number">03.</span> Projetos em Destaque
+          <div class="title-line"></div>
+        </h2>
+        <div class="projects-grid" id="projects-container">
+          <!-- Projects will be loaded dynamically from GitHub API -->
+          <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Carregando projetos do GitHub...</p>
+          </div>
         </div>
+        <div class="projects-footer">
+          <a
+            href="https://github.com/ewerton336?tab=repositories"
+            target="_blank"
+            class="btn btn-outline"
+          >
+            Ver Todos os Projetos no GitHub
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">04.</span> Entre em Contato
-                <div class="title-line"></div>
-            </h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Vamos conversar!</h3>
-                    <p>
-                        Estou sempre aberto a discutir novos projetos, oportunidades criativas ou parcerias. 
-                        Se você tem alguma ideia ou apenas quer dizer oi, sinta-se à vontade para me contatar!
-                    </p>
-                    <div class="contact-methods">
-                        <a href="mailto:ewertonguimaraes2@gmail.com" class="contact-method fade-in">
-                            <div class="method-icon">✉</div>
-                            <div class="method-info">
-                                <span class="method-label">Email</span>
-                                <span class="method-value">ewertonguimaraes2@gmail.com</span>
-                            </div>
-                        </a>
-                        <a href="https://github.com/ewerton336" target="_blank" class="contact-method fade-in">
-                            <div class="method-icon">⚙</div>
-                            <div class="method-info">
-                                <span class="method-label">GitHub</span>
-                                <span class="method-value">@ewerton336</span>
-                            </div>
-                        </a>
-                        <a href="https://www.linkedin.com/in/ewerton-guimar%C3%A3es-b97579113/" target="_blank" class="contact-method fade-in">
-                            <div class="method-icon">in</div>
-                            <div class="method-info">
-                                <span class="method-label">LinkedIn</span>
-                                <span class="method-value">Ewerton Guimarães</span>
-                            </div>
-                        </a>
-                    </div>
+      <div class="container">
+        <h2 class="section-title">
+          <span class="title-number">04.</span> Entre em Contato
+          <div class="title-line"></div>
+        </h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Vamos conversar!</h3>
+            <p>
+              Estou sempre aberto a discutir novos projetos, oportunidades
+              criativas ou parcerias. Se você tem alguma ideia ou apenas quer
+              dizer oi, sinta-se à vontade para me contatar!
+            </p>
+            <div class="contact-methods">
+              <a
+                href="mailto:ewertonguimaraes2@gmail.com"
+                class="contact-method fade-in"
+              >
+                <div class="method-icon">✉</div>
+                <div class="method-info">
+                  <span class="method-label">Email</span>
+                  <span class="method-value">ewertonguimaraes2@gmail.com</span>
                 </div>
-                <div class="contact-form-wrapper">
-                    <form id="contact-form" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Nome</label>
-                            <input type="text" id="name" name="name" required placeholder="Seu nome">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required placeholder="seu@email.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Assunto</label>
-                            <input type="text" id="subject" name="subject" required placeholder="Assunto da mensagem">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mensagem</label>
-                            <textarea id="message" name="message" required rows="5" placeholder="Sua mensagem..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-                    </form>
+              </a>
+              <a
+                href="https://github.com/ewerton336"
+                target="_blank"
+                class="contact-method fade-in"
+              >
+                <div class="method-icon">⚙</div>
+                <div class="method-info">
+                  <span class="method-label">GitHub</span>
+                  <span class="method-value">@ewerton336</span>
                 </div>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ewerton-guimar%C3%A3es-b97579113/"
+                target="_blank"
+                class="contact-method fade-in"
+              >
+                <div class="method-icon">in</div>
+                <div class="method-info">
+                  <span class="method-label">LinkedIn</span>
+                  <span class="method-value">Ewerton Guimarães</span>
+                </div>
+              </a>
+              <a
+                href="https://wa.me/5513997827870"
+                target="_blank"
+                class="contact-method fade-in"
+              >
+                <div class="method-icon">💬</div>
+                <div class="method-info">
+                  <span class="method-label">WhatsApp</span>
+                  <span class="method-value">(13) 99782-7870</span>
+                </div>
+              </a>
             </div>
+          </div>
+          <div class="contact-form-wrapper">
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="name">Nome</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Seu nome"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="seu@email.com"
+                />
+              </div>
+              <div class="form-group">
+                <label for="subject">Assunto</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  required
+                  placeholder="Assunto da mensagem"
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">Mensagem</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows="5"
+                  placeholder="Sua mensagem..."
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Enviar Mensagem
+              </button>
+            </form>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>Desenvolvido por <span class="highlight-purple">Ewerton Guimarães</span></p>
-                <p>© 2025 - Todos os direitos reservados</p>
-            </div>
-            <div class="footer-social">
-                <a href="https://github.com/ewerton336" target="_blank" class="social-link" aria-label="GitHub">GitHub</a>
-                <a href="https://www.linkedin.com/in/ewerton-guimar%C3%A3es-b97579113/" target="_blank" class="social-link" aria-label="LinkedIn">LinkedIn</a>
-                <a href="mailto:ewertonguimaraes2@gmail.com" class="social-link" aria-label="Email">Email</a>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <p>
+            Desenvolvido por
+            <span class="highlight-purple">Ewerton Guimarães</span>
+          </p>
+          <p>© 2025 - Todos os direitos reservados</p>
         </div>
+        <div class="footer-social">
+          <a
+            href="https://github.com/ewerton336"
+            target="_blank"
+            class="social-link"
+            aria-label="GitHub"
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/ewerton-guimar%C3%A3es-b97579113/"
+            target="_blank"
+            class="social-link"
+            aria-label="LinkedIn"
+            >LinkedIn</a
+          >
+          <a
+            href="mailto:ewertonguimaraes2@gmail.com"
+            class="social-link"
+            aria-label="Email"
+            >Email</a
+          >
+        </div>
+      </div>
     </footer>
 
     <!-- Scripts -->
     <script src="js/particles.js"></script>
     <script src="js/github.js"></script>
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
-
