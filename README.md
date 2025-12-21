@@ -38,6 +38,7 @@ Desenvolvedor graduado apaixonado por tecnologia e inovação, com **5+ anos de 
 ## 🛠️ Stack Tecnológico
 
 ### Backend
+
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
 ![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
 ![ASP.NET](https://img.shields.io/badge/ASP.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
@@ -45,6 +46,7 @@ Desenvolvedor graduado apaixonado por tecnologia e inovação, com **5+ anos de 
 ![Mensageria](https://img.shields.io/badge/Mensageria-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white)
 
 ### Frontend
+
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -53,6 +55,7 @@ Desenvolvedor graduado apaixonado por tecnologia e inovação, com **5+ anos de 
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 ### Database
+
 ![SQL Server](https://img.shields.io/badge/MS_SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
@@ -60,6 +63,7 @@ Desenvolvedor graduado apaixonado por tecnologia e inovação, com **5+ anos de 
 ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)
 
 ### Ferramentas & Metodologias
+
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![Microsserviços](https://img.shields.io/badge/Microservices-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![CQRS](https://img.shields.io/badge/CQRS-0078D4?style=for-the-badge&logo=azure-devops&logoColor=white)
@@ -122,15 +126,19 @@ Confira meu portfolio moderno desenvolvido com:
 ## 📂 Projetos em Destaque
 
 ### 🤖 [BecomexRobo](https://github.com/ewerton336/BecomexRobo)
+
 Automação e robótica para processos empresariais
 
 ### 📦 [ExtratorZipZpl](https://github.com/ewerton336/ExtratorZipZpl)
+
 Extrator de arquivos ZPL de pastas zipadas com envio para impressão
 
 ### 🖨️ [ServiceImpressaoZpl](https://github.com/ewerton336/ServiceImpressaoZpl)
+
 Serviço para impressão de etiquetas ZPL
 
 ### 📱 [ApiReceitas](https://github.com/ewerton336/ApiReceitas)
+
 API para criação de receitas usando SQLite e Command Handler
 
 ---
@@ -166,7 +174,8 @@ API para criação de receitas usando SQLite e Command Handler
 ## 💼 Experiência Profissional
 
 **Becomex LAB**  
-*Desenvolvedor .NET*  
+_Desenvolvedor .NET_
+
 - Desenvolvimento de soluções empresariais robustas
 - Arquitetura de microsserviços e APIs REST
 - Implementação de padrões CQRS e Event Sourcing
