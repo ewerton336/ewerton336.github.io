@@ -286,16 +286,6 @@ document.head.appendChild(style);
 // Initialize interactions when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new PortfolioInteractions();
-    
-    // Add fade-in class to elements after page load
-    setTimeout(() => {
-        const elements = document.querySelectorAll('.about-text p, .stat-item, .skill-category, .contact-method');
-        elements.forEach((el, index) => {
-            setTimeout(() => {
-                el.classList.add('fade-in');
-            }, index * 100);
-        });
-    }, 500);
 });
 
 // Add loading animation
