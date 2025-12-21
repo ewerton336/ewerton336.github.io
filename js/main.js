@@ -15,7 +15,7 @@ class PortfolioInteractions {
             'Desenvolvedor .NET',
             'Full Stack Developer',
             'Programador C#',
-            'Aprendendo React',
+            'React & Angular',
             'Criando Soluções'
         ];
         this.typingIndex = 0;
