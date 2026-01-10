@@ -246,3 +246,4 @@ document.addEventListener('DOMContentLoaded', () => {
     new GitHubPortfolio('ewerton336');
 });
 
+

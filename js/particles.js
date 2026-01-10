@@ -196,3 +196,4 @@ document.addEventListener('DOMContentLoaded', () => {
     new ParticleSystem('particles-canvas');
 });
 
+
