@@ -1,424 +1,1064 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Ewerton Guimarães - .NET Developer Portfolio | Modern portfolio showcasing .NET Core, React, and full-stack development projects"
-    />
-    <meta
-      name="keywords"
-      content="Ewerton Guimarães, .NET Developer, React, TypeScript, Full Stack Developer, Portfolio"
-    />
-    <meta name="author" content="Ewerton Guimarães" />
-    <title>Ewerton Guimarães | .NET Developer Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
-    <!-- Particle Background Canvas -->
-    <canvas id="particles-canvas"></canvas>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ewerton Guimarães — Senior Software Engineer</title>
+<meta name="description" content="Portfólio de Ewerton Guimarães, Senior Software Engineer (.NET, Angular, React, Automação Industrial e IA) — no estilo Windows XP.">
+<meta name="author" content="Ewerton Guimarães">
+<meta property="og:title" content="Ewerton Guimarães — Senior Software Engineer">
+<meta property="og:description" content="Portfólio no estilo Windows XP. .NET, Angular, React, PLCs Rockwell e IA aplicada.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 20'%3E%3Cg transform='skewX(-9)'%3E%3Cpath d='M2 1h8v8H2z' fill='%23f24b3d'/%3E%3Cpath d='M11 1h8v8h-8z' fill='%2357c65a'/%3E%3Cpath d='M2 10h8v8H2z' fill='%232f9bf0'/%3E%3Cpath d='M11 10h8v8h-8z' fill='%23ffcc21'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+  :root{
+    --face:#ece9d8; --field:#fff; --field-bd:#7f9db9; --fg:#101010; --muted:#55606e;
+    --link:#1a4bc4; --sel:#316ac5; --sel-soft:rgba(49,106,197,.30);
+    --frame:#0451d6; --frame-dk:#0033b0;
+    --title-1:#159bff; --title-2:#0a72f0; --title-3:#0656e0; --title-4:#0a3fc8;
+    --title-in-1:#a7c1ea; --title-in-2:#8ba8dd;
+    --tb-1:#3f8beb; --tb-2:#245edb; --tb-3:#1c52d0; --tb-4:#1b48c4; --tb-line:#63a4f6;
+    --tray-1:#1ba7e8; --tray-2:#1489dc; --tray-3:#106fce;
+    --start-1:#61be4f; --start-2:#4faa3c; --start-3:#3d9130; --start-4:#2f7d22;
+    --taskbar:40px;
+    --font:Tahoma,"Segoe UI","MS Sans Serif",Geneva,Verdana,sans-serif;
+    --mono:"Lucida Console",Consolas,"Courier New",monospace;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; height:100%; overflow:hidden; }
+  html{ -webkit-text-size-adjust:100%; }
+  body{
+    font-family:var(--font); font-size:13px; line-height:1.45; color:var(--fg);
+    background:#5a833b url("assets/bliss.jpg") center center / cover no-repeat fixed;
+  }
+  a{ color:var(--link); }
+  h1,h2,h3,h4,p,ul{ margin:0; }
+  ul{ list-style:none; padding:0; }
+  button{ font-family:var(--font); font-size:13px; cursor:pointer; }
+  img{ max-width:100%; }
 
-    <!-- Navigation Bar -->
-    <nav class="navbar" id="navbar">
-      <div class="nav-container">
-        <a href="#home" class="nav-logo">
-          <span class="logo-text">EG</span>
-        </a>
-        <ul class="nav-menu">
-          <li><a href="#home" class="nav-link active">Início</a></li>
-          <li><a href="#about" class="nav-link">Sobre</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#projects" class="nav-link">Projetos</a></li>
-          <li><a href="#contact" class="nav-link">Contato</a></li>
-        </ul>
-      </div>
-    </nav>
+  .sunken{ border:1px solid var(--field-bd); background:#fff; box-shadow: inset 1px 1px 1px rgba(0,0,0,.10); }
+  .raised{ border:1px solid #d7d3c4; background:linear-gradient(180deg,#ffffff,#f4f2ea); box-shadow:0 1px 2px rgba(0,0,0,.12); }
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero-container">
-        <div class="hero-content">
-          <h1 class="hero-title">
-            Olá, eu sou <span class="highlight-purple">Ewerton Guimarães</span>
-          </h1>
-          <div class="hero-subtitle">
-            <span class="typing-text" id="typing-text"></span>
-            <span class="cursor">|</span>
-          </div>
-          <p class="hero-description">
-            Desenvolvedor .NET Core/Framework com experiência em criar soluções
-            robustas e escaláveis. Atualmente explorando o ecossistema React e
-            TypeScript para desenvolvimento full-stack.
-          </p>
-          <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">Ver Projetos</a>
-            <a href="#contact" class="btn btn-secondary">Entre em Contato</a>
+  /* Área de trabalho */
+  .desktop{ position:fixed; inset:0; z-index:1; padding:16px 14px calc(var(--taskbar) + 14px); overflow:hidden; }
+  .desktop__icons{ display:flex; flex-direction:column; flex-wrap:wrap; align-content:flex-start; gap:6px 10px; height:100%; }
+  .desk-icon{
+    display:flex; flex-direction:column; align-items:center; gap:5px;
+    width:84px; min-height:84px; padding:6px 3px;
+    background:transparent; border:1px solid transparent; border-radius:2px;
+    color:#fff; text-decoration:none; text-align:center; font-size:12px; line-height:1.15;
+  }
+  .desk-icon__ico{ width:38px; height:38px; filter:drop-shadow(1px 1px 1px rgba(0,0,0,.45)); }
+  .desk-icon__label{ padding:1px 4px; border-radius:2px; text-shadow:1px 1px 2px rgba(0,0,0,.9); }
+  .desk-icon:hover{ background:rgba(120,170,255,.22); border-color:rgba(255,255,255,.35); }
+  .desk-icon:hover .desk-icon__label,
+  .desk-icon:focus-visible .desk-icon__label{ background:var(--sel); outline:1px dotted #cfe0ff; text-shadow:none; }
+  .desk-icon:focus-visible{ outline:none; background:rgba(120,170,255,.28); }
+
+  /* Janelas */
+  .win{
+    position:fixed; top:70px; left:80px;
+    width:min(var(--w, 600px), calc(100vw - 24px));
+    max-height:calc(100vh - var(--taskbar) - 20px);
+    background:var(--face); border:3px solid var(--frame); border-top:none;
+    border-radius:8px 8px 0 0; box-shadow: 2px 5px 20px rgba(0,0,0,.5);
+    display:none; flex-direction:column; overflow:hidden; z-index:20;
+  }
+  .win.is-open{ display:flex; animation:winpop .12s ease-out; }
+  @keyframes winpop{ from{ transform:scale(.96); opacity:.4; } to{ transform:scale(1); opacity:1; } }
+  .win.is-max{ left:8px !important; top:8px !important; right:8px !important; bottom:calc(var(--taskbar) + 12px) !important; width:auto !important; max-height:none !important; border-radius:6px 6px 0 0; }
+
+  .win__title{
+    flex:0 0 auto; display:flex; align-items:center; gap:7px; height:29px; padding:0 4px 0 7px;
+    background:linear-gradient(180deg, var(--title-1) 0%, var(--title-2) 9%, var(--title-3) 45%, var(--title-4) 92%, #0d63f2 100%);
+    color:#fff; font-weight:bold;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.55), inset 0 -2px 3px rgba(0,0,0,.28);
+    text-shadow:1px 1px 1px rgba(0,0,0,.5); user-select:none; touch-action:none;
+    border-radius:5px 5px 0 0;
+  }
+  .win:not(.is-active) .win__title{
+    background:linear-gradient(180deg, var(--title-in-1), var(--title-in-2) 55%, #7fa0d8 100%);
+    color:#eef3fc; text-shadow:none; box-shadow: inset 0 1px 0 rgba(255,255,255,.4);
+  }
+  .win__title-ico{ width:16px; height:16px; flex:0 0 16px; filter:drop-shadow(0 1px 0 rgba(0,0,0,.35)); }
+  .win__title-text{ flex:1; font-size:12.5px; letter-spacing:.2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .win__controls{ display:flex; gap:2px; align-items:center; }
+  .title-btn{
+    width:22px; height:21px; padding:0; display:flex; align-items:center; justify-content:center;
+    border:1px solid rgba(255,255,255,.85); border-radius:3px;
+    background:linear-gradient(180deg,#59a6f7 0%,#2168e0 52%,#0c48c6 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.6); color:#fff; font-weight:bold; line-height:1;
+  }
+  .title-btn:hover{ filter:brightness(1.14); }
+  .title-btn:active{ filter:brightness(.88); box-shadow: inset 1px 1px 3px rgba(0,0,0,.45); }
+  .title-btn--close{ width:24px; background:linear-gradient(180deg,#f9ad7d 0%,#e5542b 46%,#c0301a 100%); font-size:14px; }
+  .glyph{ display:inline-block; }
+  .glyph--min{ width:8px; height:2px; background:#fff; margin-top:8px; box-shadow:0 1px 0 rgba(0,0,0,.35); }
+  .glyph--max{ width:11px; height:9px; border:1px solid #fff; border-top-width:2px; box-shadow:0 1px 0 rgba(0,0,0,.3); }
+
+  .win__menubar{ flex:0 0 auto; display:flex; gap:1px; padding:2px 5px; font-size:12px; background:linear-gradient(180deg,#f7f6ef,#ece9d8); border-bottom:1px solid #c8c4b4; }
+  .win__menubar span{ padding:2px 8px; border-radius:2px; }
+  .win__menubar span u{ text-decoration:underline; }
+  .win__menubar span:hover{ background:var(--sel); color:#fff; }
+
+  .win__body{ padding:16px; overflow:auto; min-height:0; flex:1 1 auto; background:var(--face); }
+  .win__status{ margin-top:12px; font-size:11px; color:var(--muted); display:flex; gap:8px; flex-wrap:wrap; }
+  .win__status .cell{ padding:2px 8px; }
+
+  /* Botões XP */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:7px; padding:6px 15px; min-height:26px;
+    background:linear-gradient(180deg,#fdfeff 0%,#eef4fc 46%,#dbe6f6 47%,#cddff4 100%);
+    color:#000; font-weight:normal; text-decoration:none;
+    border:1px solid #003c74; border-radius:3px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.85);
+  }
+  .btn:hover{ border-color:#e08a1c; box-shadow: inset 0 0 0 1px rgba(255,255,255,.9), 0 0 4px rgba(255,170,0,.55); }
+  .btn:active{ background:linear-gradient(180deg,#cdd8ea,#dae5f4); box-shadow: inset 1px 1px 2px rgba(0,0,0,.28); transform:translateY(1px); }
+  .btn:focus-visible{ outline:1px dotted #000; outline-offset:-4px; }
+  .btn--default{ border-color:#0033a0; box-shadow: inset 0 0 0 1px #fff, inset 0 0 0 2px #7ea6e6; font-weight:bold; }
+  .btn__ico{ width:16px; height:16px; }
+  .btn-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+
+  /* Hero */
+  .hero{ display:flex; gap:20px; align-items:flex-start; }
+  .hero__photo{ flex:0 0 128px; width:128px; height:146px; background:#fff; padding:4px; display:flex; overflow:hidden; }
+  .hero__photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .hero__main{ flex:1; min-width:0; }
+  .eyebrow{ font-family:var(--mono); font-size:12px; background:#0b2a4a; color:#63ffa0; display:inline-block; padding:2px 8px; border-radius:2px; margin-bottom:12px; letter-spacing:.5px; }
+  .hero__name{ font-size:30px; line-height:1.08; letter-spacing:-.3px; }
+  .hero__role{ display:inline-block; margin-top:8px; padding:3px 11px; border-radius:3px; background:linear-gradient(180deg,#2f7be8,#175fd0); color:#fff; font-weight:bold; font-size:13px; box-shadow: inset 0 1px 0 rgba(255,255,255,.35); }
+  .hero__tagline{ margin-top:14px; max-width:54ch; font-size:14.5px; }
+
+  /* Notepad */
+  .notepad{ background:#fff; padding:12px; min-height:120px; font-family:var(--mono); font-size:13px; line-height:1.65; color:#000; }
+  .notepad p + p{ margin-top:12px; }
+
+  /* Skills */
+  .skills-hint{ font-size:12.5px; color:var(--muted); margin-bottom:12px; }
+  .skill-cat{ font-size:12px; font-weight:bold; color:#1a3e7a; margin:14px 4px 6px; }
+  .skill-cat:first-child{ margin-top:2px; }
+  .skill-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(104px, 1fr)); gap:9px; padding:12px; background:#fff; }
+  .tile{ display:flex; flex-direction:column; align-items:center; gap:8px; padding:11px 6px; text-align:center; background:linear-gradient(180deg,#fbfcff,#eef2f8); border:1px solid #dfe4ec; border-radius:4px; }
+  .tile:hover{ border-color:#8fb2e6; box-shadow:0 1px 4px rgba(49,106,197,.28); }
+  .tile__ico{ width:32px; height:32px; }
+  .tile__label{ font-size:12px; font-weight:bold; }
+
+  /* Currículo / Experiência */
+  .cv-section + .cv-section{ margin-top:18px; }
+  .cv-h{ display:flex; align-items:center; gap:8px; font-size:14px; font-weight:bold; color:#0a3d91; padding-bottom:5px; border-bottom:1px solid #c8c4b4; margin-bottom:10px; }
+  .cv-h svg{ width:18px; height:18px; }
+  .job{ background:#fff; border:1px solid #dbe1ea; border-radius:5px; padding:12px; }
+  .job + .job{ margin-top:10px; }
+  .job__head{ display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+  .job__role{ font-size:13.5px; font-weight:bold; }
+  .job__date{ font-family:var(--mono); font-size:11px; color:var(--muted); white-space:nowrap; }
+  .job__co{ font-size:12.5px; color:#1a4bc4; margin-top:2px; }
+  .job__place{ font-size:11px; color:var(--muted); }
+  .job__list{ margin-top:9px; padding-left:2px; display:grid; gap:5px; }
+  .job__list li{ position:relative; padding-left:16px; font-size:12.5px; }
+  .job__list li::before{ content:""; position:absolute; left:2px; top:6px; width:6px; height:6px; background:#4f9a37; border:1px solid #2f6c1c; border-radius:1px; }
+  .edu-grid{ display:grid; gap:9px; }
+  .edu{ display:flex; gap:11px; align-items:flex-start; background:#fff; border:1px solid #dbe1ea; border-radius:5px; padding:10px 12px; }
+  .edu svg{ width:26px; height:26px; flex:0 0 26px; margin-top:1px; }
+  .edu__t{ font-size:13px; font-weight:bold; }
+  .edu__s{ font-size:12px; color:var(--muted); }
+  .cert-list{ display:grid; gap:7px; }
+  .cert{ display:flex; gap:10px; align-items:center; background:#fff; border:1px solid #dbe1ea; border-radius:5px; padding:8px 11px; font-size:12.5px; }
+  .cert svg{ width:22px; height:22px; flex:0 0 22px; }
+
+  /* Explorer / Projetos */
+  .explorer-bar{ display:flex; align-items:center; gap:8px; padding:0 0 10px; margin-bottom:12px; border-bottom:1px solid #c8c4b4; }
+  .explorer-bar__addr{ flex:1; min-width:0; }
+  .addr-label{ font-size:11px; color:var(--muted); margin-right:6px; }
+  .addr-field{ display:flex; align-items:center; gap:7px; background:#fff; padding:5px 8px; font-size:12px; }
+  .addr-field svg{ width:16px; height:16px; flex:0 0 16px; }
+  .proj-hint{ font-size:12.5px; color:#5a4d1a; margin-bottom:14px; padding:9px 12px; background:#fdf7d0; border:1px solid #e6d98a; border-radius:3px; }
+  .proj-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(232px, 1fr)); gap:14px; }
+  .proj{ padding:12px; border-radius:5px; display:flex; flex-direction:column; }
+  .proj__head{ display:flex; align-items:center; gap:10px; }
+  .proj__ico{ width:34px; height:34px; flex:0 0 34px; }
+  .proj__title{ font-size:14px; font-weight:bold; }
+  .proj__sub{ font-size:11px; color:var(--muted); font-family:var(--mono); word-break:break-all; }
+  .proj__desc{ margin-top:10px; padding:9px; background:#fff; font-size:12.5px; min-height:62px; flex:1; }
+  .tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+  .tag{ font-family:var(--mono); font-size:11px; padding:2px 8px; border-radius:9px; background:#e7eefb; border:1px solid #b9cdec; color:#204a91; }
+  .proj .btn-row{ margin-top:12px; }
+  .proj .btn{ padding:5px 12px; min-height:24px; font-size:12px; }
+
+  /* Contato */
+  .contact-list{ display:grid; grid-template-columns:repeat(auto-fit, minmax(244px, 1fr)); gap:12px; }
+  .contact-link{ display:flex; align-items:center; gap:12px; padding:12px; background:linear-gradient(180deg,#fbfcff,#eef2f8); text-decoration:none; color:#000; border:1px solid #cfd8e6; border-radius:5px; box-shadow: inset 0 1px 0 #fff; }
+  .contact-link:hover{ border-color:#e08a1c; box-shadow:0 0 5px rgba(255,170,0,.5); }
+  .contact-link:active{ transform:translateY(1px); }
+  .contact-link:focus-visible{ outline:1px dotted #000; outline-offset:-6px; }
+  .contact-link__ico{ width:36px; height:36px; flex:0 0 36px; }
+  .contact-link__label{ font-weight:bold; font-size:14px; }
+  .contact-link__value{ font-family:var(--mono); font-size:12px; color:var(--muted); overflow-wrap:anywhere; }
+  .contact-link--wide{ grid-column:1 / -1; }
+  .contact-note{ margin-top:16px; font-size:12px; color:var(--muted); }
+
+  /* ===== Janela de Contato: MSN Messenger fiel ===== */
+  #win-contato .win__body{ padding:0; background:#fff; }
+  .msn{ display:flex; flex-direction:column; background:#fff; }
+  .msn__menu{ display:flex; gap:1px; padding:3px 7px; font-size:12px; background:linear-gradient(#ffffff,#eef4fc); border-bottom:1px solid #cddaee; }
+  .msn__menu span{ padding:2px 8px; border-radius:2px; color:#0a2a5e; }
+  .msn__menu span u{ text-decoration:underline; }
+  .msn__menu span:hover{ background:var(--sel); color:#fff; }
+  .msn__brand{ display:flex; align-items:center; gap:6px; padding:6px 12px; background:linear-gradient(#f6faff,#e2ecfa); }
+  .msn__brand svg{ width:19px; height:19px; }
+  .wm{ font:italic 700 16px var(--font); color:#1560bd; letter-spacing:-.5px; }
+  .wm-sub{ color:#5a6675; font-size:14px; }
+  .msn__me{ display:flex; align-items:center; gap:11px; padding:9px 12px; background:linear-gradient(#dcebfb,#c1dcf5); border-top:1px solid rgba(255,255,255,.7); }
+  .msn__ava{ width:54px; height:54px; flex:0 0 54px; padding:3px; background:linear-gradient(#fff,#e8eef7); border:1px solid #8fb0d8; border-radius:3px; box-shadow:0 1px 2px rgba(0,0,0,.28); }
+  .msn__ava img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .msn__id{ min-width:0; flex:1; }
+  .msn__name{ font-size:15px; font-weight:bold; color:#12335f; display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+  .msn__name .st{ font-size:12px; font-weight:normal; color:#2f9e2f; }
+  .msn__name .tri{ width:0; height:0; border-left:5px solid #365f96; border-top:4px solid transparent; border-bottom:4px solid transparent; }
+  .msn__psm{ font-size:12px; color:#6b7789; font-style:italic; margin-top:4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .msn__panel{ background:#fff; border-top:2px solid #a9c6e8; padding:7px; display:flex; flex-direction:column; gap:2px; }
+  .msn__note{ display:flex; gap:7px; padding:6px 8px; font-size:11.5px; color:#3a3626; background:#fbf6cf; border:1px solid #e3d78a; border-radius:2px; }
+  .msn__note svg{ width:14px; height:14px; flex:0 0 14px; margin-top:1px; }
+  .msn__add{ display:flex; align-items:center; gap:8px; padding:7px 6px; font-size:12.5px; font-weight:bold; color:#12335f; }
+  .msn__add svg{ width:18px; height:18px; flex:0 0 18px; }
+  .msn__group{ display:flex; align-items:center; gap:6px; font-size:12px; font-weight:bold; color:#123a7a; padding:6px 6px 3px; border-top:1px solid #e2e8f2; }
+  .msn__tri{ width:0; height:0; border-left:6px solid #4a78c0; border-top:4px solid transparent; border-bottom:4px solid transparent; }
+  .msn__buddy{ display:flex; align-items:center; gap:9px; padding:6px 8px; border-radius:3px; text-decoration:none; color:#101010; overflow:hidden; }
+  .msn__buddy svg{ width:19px; height:19px; flex:0 0 19px; }
+  .msn__buddy .bn{ font-size:13px; white-space:nowrap; }
+  .msn__buddy .bs{ color:#8a94a4; font-size:11.5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .msn__buddy:hover{ background:linear-gradient(#eef6ff,#d2e6ff); outline:1px solid #a9cbef; }
+  .msn__foot{ position:relative; margin-top:6px; padding:11px 12px 10px; background:linear-gradient(#e7f0fc,#cbdcf3); border-top:1px solid #a9c6e8; display:flex; align-items:center; gap:6px; }
+  .msn__foot .wm{ font-size:17px; }
+  .msn__foot .wm-sub{ color:#333; font-weight:bold; }
+  .msn__foot .net{ color:#8a94a4; font-size:12px; align-self:flex-end; margin-bottom:2px; }
+  .msn__foot::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:3px; background:linear-gradient(90deg,#f5c518 0 33.3%,#4aa64a 33.3% 66.6%,#d0402f 66.6% 100%); }
+
+  /* Sobre o Windows / Ativação */
+  .about-win{ display:flex; flex-direction:column; gap:14px; }
+  .about-hd{ display:flex; align-items:center; gap:14px; padding-bottom:14px; border-bottom:1px solid #c8c4b4; }
+  .about-logo{ display:flex; align-items:center; gap:9px; }
+  .about-logo .flag{ width:40px; height:36px; }
+  .about-logo b{ font-size:26px; font-weight:normal; letter-spacing:-.5px; color:#1a4bc4; }
+  .about-logo b i{ font-style:normal; font-weight:bold; }
+  .about-logo sup{ font-size:11px; color:#d98e21; font-weight:bold; }
+  .about-grid{ display:grid; gap:5px; font-size:12.5px; }
+  .about-grid .k{ color:var(--muted); }
+  .about-key{ margin-top:4px; padding:11px 12px; background:#fffbe6; border:1px solid #e6d98a; border-radius:4px; }
+  .about-key .lbl{ font-size:11px; color:#5a4d1a; }
+  .about-key .val{ font-family:var(--mono); font-size:15px; font-weight:bold; letter-spacing:1.5px; color:#1a3e7a; margin-top:3px; word-break:break-all; }
+  .about-copy{ font-size:11px; color:var(--muted); }
+
+  /* Barra de tarefas */
+  .taskbar{
+    position:fixed; left:0; right:0; bottom:0; z-index:900; display:flex; align-items:stretch; gap:6px;
+    background:linear-gradient(180deg, var(--tb-1) 0%, var(--tb-2) 9%, var(--tb-3) 55%, var(--tb-4) 100%);
+    box-shadow: inset 0 1px 0 var(--tb-line), inset 0 4px 7px rgba(255,255,255,.12);
+    border-top:1px solid #17439f; height:calc(var(--taskbar) + env(safe-area-inset-bottom)); padding-bottom:env(safe-area-inset-bottom);
+  }
+  .taskbar::before{ content:""; position:absolute; left:0; right:0; top:0; height:2px; background:linear-gradient(180deg,#88bafa,#3f83ec); }
+  .start-btn{
+    position:relative; display:flex; align-items:center; gap:7px; flex:0 0 auto; height:100%; margin-right:6px; padding:0 22px 3px 11px;
+    font-style:italic; font-weight:bold; font-size:16px; color:#fff; text-shadow:1px 1px 1px rgba(0,0,0,.45); letter-spacing:.2px;
+    border:none; border-radius:0 12px 12px 0 / 0 17px 16px 0;
+    background:linear-gradient(180deg, var(--start-1) 0%, var(--start-2) 42%, var(--start-3) 56%, var(--start-4) 100%);
+    box-shadow: inset 0 2px 1px rgba(255,255,255,.5), inset -3px 0 7px rgba(0,0,0,.28), inset 0 -4px 7px rgba(0,0,0,.22);
+  }
+  .start-btn::after{ content:""; position:absolute; left:8px; right:16px; top:3px; height:38%; border-radius:0 0 40px 40px; background:linear-gradient(180deg,rgba(255,255,255,.45),rgba(255,255,255,0)); }
+  .start-btn.is-pressed{ background:linear-gradient(180deg,#2f7d22,#276c1c); box-shadow: inset 2px 2px 5px rgba(0,0,0,.45); }
+  .flag{ position:relative; z-index:1; width:22px; height:20px; }
+  .taskbar__apps{ display:flex; align-items:center; gap:5px; flex:1; overflow-x:auto; min-width:0; padding:4px 0; }
+  .taskbar-btn{
+    display:flex; align-items:center; gap:7px; flex:0 1 172px; min-width:44px; max-width:192px; height:calc(var(--taskbar) - 10px); padding:0 9px; font-size:12px; text-align:left; color:#fff;
+    background:linear-gradient(180deg,#5a9bf2 0%,#3474e6 50%,#2a67dc 100%); border:1px solid #2452b3; border-radius:3px; box-shadow: inset 0 1px 0 rgba(255,255,255,.4); white-space:nowrap; overflow:hidden;
+  }
+  .taskbar-btn:hover{ filter:brightness(1.08); }
+  .taskbar-btn span:last-child{ overflow:hidden; text-overflow:ellipsis; }
+  .taskbar-btn.is-pressed{ background:linear-gradient(180deg,#1c4fb6 0%,#2a63cf 100%); box-shadow: inset 1px 1px 4px rgba(0,0,0,.5); font-weight:bold; }
+  .taskbar-btn__ico{ width:16px; height:16px; flex:0 0 16px; }
+  .tray{ flex:0 0 auto; margin-left:auto; display:flex; align-items:center; gap:8px; padding:0 10px; font-size:12px; color:#fff; background:linear-gradient(180deg, var(--tray-1) 0%, var(--tray-2) 48%, var(--tray-3) 100%); border-left:1px solid #0c4ea5; box-shadow: inset 1px 0 0 rgba(255,255,255,.3), inset 0 1px 0 rgba(255,255,255,.35); }
+  .tray__ico{ width:16px; height:16px; opacity:.95; }
+  #clock{ font-variant-numeric:tabular-nums; text-shadow:0 1px 1px rgba(0,0,0,.3); min-width:38px; text-align:center; }
+
+  /* Seletor de idioma (bandeja) */
+  .lang{ position:relative; }
+  .lang__btn{ display:flex; align-items:center; gap:5px; height:22px; padding:0 6px; color:#fff; font-size:11px; font-weight:bold; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.35); border-radius:3px; text-shadow:0 1px 1px rgba(0,0,0,.35); }
+  .lang__btn:hover{ background:rgba(255,255,255,.26); }
+  .lang__flag{ width:18px; height:12px; border-radius:1px; box-shadow:0 0 0 1px rgba(0,0,0,.25); }
+  .lang__menu{ position:absolute; right:0; bottom:30px; display:none; flex-direction:column; min-width:150px; background:#fff; border:1px solid #0831c8; border-radius:5px 5px 3px 3px; box-shadow:0 3px 16px rgba(0,0,0,.45); overflow:hidden; padding:3px; }
+  .lang.is-open .lang__menu{ display:flex; }
+  .lang__item{ display:flex; align-items:center; gap:9px; padding:7px 9px; font-size:12.5px; color:#0a0a0a; background:transparent; border:0; border-radius:3px; text-align:left; }
+  .lang__item .lang__flag{ width:20px; height:14px; }
+  .lang__item:hover,.lang__item.is-cur{ background:linear-gradient(180deg,#3d8bef,#1f66e0); color:#fff; }
+
+  /* Menu Iniciar */
+  .start-menu{
+    position:fixed; left:2px; bottom:calc(var(--taskbar) + 0px); z-index:950; width:384px; max-width:calc(100vw - 6px);
+    display:none; flex-direction:column; border:1px solid #0831c8; border-top:none; border-radius:0 9px 0 0; box-shadow:3px 2px 22px rgba(0,0,0,.5); overflow:hidden; background:#fff;
+  }
+  .start-menu.is-open{ display:flex; }
+  .start-menu__header{ display:flex; align-items:center; gap:11px; padding:9px 14px; background:linear-gradient(180deg,#2f8beb 0%,#1a63dd 46%,#154fce 54%,#3b8ff0 100%); color:#fff; box-shadow: inset 0 -2px 0 rgba(255,255,255,.25); border-bottom:2px solid #f7a331; }
+  .start-menu__avatar{ width:40px; height:40px; flex:0 0 40px; border-radius:5px; background:linear-gradient(180deg,#ffd479,#e88f2a); padding:2px; box-shadow:0 1px 3px rgba(0,0,0,.4); overflow:hidden; }
+  .start-menu__avatar img{ width:100%; height:100%; border-radius:4px; object-fit:cover; display:block; }
+  .start-menu__user{ font-size:16px; font-weight:bold; text-shadow:1px 1px 1px rgba(0,0,0,.45); }
+  .start-menu__body{ display:flex; }
+  .start-col{ display:flex; flex-direction:column; padding:5px; gap:1px; }
+  .start-col--left{ flex:1 1 54%; background:#fff; }
+  .start-col--right{ flex:1 1 46%; background:#d3e5fa; border-left:1px solid #aac4e8; box-shadow: inset 1px 0 0 #fff; }
+  .start-col__cap{ font-size:11px; color:#33507e; font-weight:bold; padding:6px 8px 3px; }
+  .start-item{ display:flex; align-items:center; gap:11px; width:100%; padding:7px 8px; text-align:left; font-size:12.5px; border-radius:3px; background:transparent; border:0; color:#0a0a0a; text-decoration:none; }
+  .start-col--right .start-item{ color:#123a7a; font-weight:bold; }
+  .start-item__ico{ width:24px; height:24px; flex:0 0 24px; }
+  .start-item small{ display:block; font-weight:normal; font-size:11px; color:#6a6a6a; }
+  .start-col--right .start-item small{ color:#3a5a92; font-weight:normal; }
+  .start-item:hover,.start-item:focus-visible{ background:linear-gradient(180deg,#3d8bef,#1f66e0); color:#fff; outline:none; }
+  .start-item:hover small,.start-item:focus-visible small{ color:#e6f0ff; }
+  .start-sep{ height:0; border-top:1px solid #c3d4ee; margin:5px 6px; }
+  .start-col--left .start-sep{ border-color:#dcdcd2; }
+  .start-menu__footer{ display:flex; justify-content:flex-end; gap:8px; padding:8px 14px; background:linear-gradient(180deg,#3b8ff0 0%,#175fd0 46%,#134fc4 100%); border-top:2px solid #f7a331; }
+  .start-foot-btn{ display:flex; align-items:center; gap:8px; padding:5px 10px; background:transparent; border:1px solid transparent; border-radius:4px; color:#fff; font-size:12px; text-shadow:1px 1px 1px rgba(0,0,0,.4); }
+  .start-foot-btn:hover,.start-foot-btn:focus-visible{ background:rgba(255,255,255,.18); border-color:rgba(255,255,255,.4); outline:none; }
+  .foot-ico{ width:26px; height:26px; border-radius:4px; padding:3px; }
+  .foot-ico--off{ background:linear-gradient(180deg,#e5512b,#b52a17); }
+  .foot-ico--logoff{ background:linear-gradient(180deg,#f2b64a,#d98e21); }
+
+  /* Desligar */
+  .shutdown{ position:fixed; inset:0; z-index:2000; display:none; background:linear-gradient(180deg,#5a7ede 0%,#43539f 46%,#3a4894 100%); color:#fff; flex-direction:column; align-items:center; justify-content:center; gap:20px; text-align:center; padding:24px; }
+  .shutdown.is-open{ display:flex; }
+  .shutdown__logo{ display:flex; align-items:center; gap:12px; }
+  .shutdown__logo .flag{ width:44px; height:40px; }
+  .shutdown__logo b{ font-size:30px; font-weight:normal; letter-spacing:-.5px; text-shadow:1px 1px 2px rgba(0,0,0,.35); }
+  .shutdown__logo b i{ font-weight:bold; font-style:normal; }
+  .shutdown__rule{ width:min(440px,80vw); height:2px; background:linear-gradient(90deg,transparent,rgba(255,255,255,.6),transparent); }
+  .shutdown h2{ font-size:22px; font-weight:normal; letter-spacing:.3px; }
+  .shutdown p{ font-size:14px; color:#dfe6ff; max-width:40ch; }
+  .shutdown .btn{ margin-top:6px; }
+
+  @media (min-width:761px){ .win__title{ cursor:move; } }
+  @media (max-width:760px){
+    .desktop{ padding:12px 10px calc(var(--taskbar) + 12px); }
+    .win{ left:6px !important; top:6px !important; right:6px !important; width:auto !important; max-height:calc(100vh - var(--taskbar) - 12px) !important; }
+    .win.is-max{ bottom:calc(var(--taskbar) + 8px) !important; }
+    .hero{ flex-direction:column; align-items:center; text-align:center; }
+    .hero__tagline{ margin-left:auto; margin-right:auto; }
+    .hero .btn-row{ justify-content:center; }
+    .hero__name{ font-size:25px; }
+    .job__head{ flex-direction:column; gap:2px; }
+  }
+  @media (max-width:420px){
+    .desk-icon{ width:76px; }
+    .taskbar-btn{ flex-basis:108px; }
+    .start-menu{ width:min(384px, calc(100vw - 8px)); }
+    .start-btn{ font-size:15px; padding-right:16px; }
+    .tray .tray-label{ display:none; }
+  }
+  @media (pointer:coarse){
+    .btn,.contact-link,.taskbar-btn,.start-item,.start-foot-btn,.desk-icon,.lang__item{ min-height:44px; }
+    .title-btn{ width:26px; height:24px; }
+    .title-btn--close{ width:28px; }
+  }
+  @media (prefers-reduced-motion:reduce){ *{ scroll-behavior:auto !important; } .win.is-open{ animation:none; } }
+</style>
+</head>
+<body>
+
+<!-- Biblioteca de ícones (SVG, estilo Luna) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="ic-computer" viewBox="0 0 32 32">
+    <defs>
+      <linearGradient id="msc-scr" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#d3f0ff"/><stop offset=".45" stop-color="#3aa0ef"/><stop offset="1" stop-color="#0f63c8"/>
+      </linearGradient>
+    </defs>
+    <ellipse cx="12.4" cy="27.1" rx="11" ry="3.3" fill="#dfe2ef" stroke="#9aa0c0" stroke-width=".8"/>
+    <path d="M18.5 8.2l7.8 2.1v13.2l-7.8 2.1z" fill="#c9cbe6" stroke="#7b7fb0" stroke-width=".8" stroke-linejoin="round"/>
+    <path d="M18.5 8.2l7.8 2.1 1.9-1.1-7.8-2.1z" fill="#ecedf7" stroke="#7b7fb0" stroke-width=".8" stroke-linejoin="round"/>
+    <path d="M26.3 10.3l1.9-1.1v13.2l-1.9 1.1z" fill="#a9adcd" stroke="#7b7fb0" stroke-width=".8" stroke-linejoin="round"/>
+    <rect x="20" y="12" width="4.6" height="1.5" rx=".5" fill="#8b8fc0"/>
+    <rect x="20" y="14.4" width="4.6" height="1.5" rx=".5" fill="#8b8fc0"/>
+    <circle cx="23.4" cy="22.2" r="1" fill="#7ed957" stroke="#3f9a2f" stroke-width=".5"/>
+    <path d="M3 5.7c0-.8.6-1.5 1.4-1.6L15.4 3.1c1-.1 1.9.7 1.9 1.7v10.9c0 .9-.7 1.6-1.6 1.6H4.6c-.9 0-1.6-.7-1.6-1.6z" fill="#d9dcf0" stroke="#7b7fb0" stroke-width=".9" stroke-linejoin="round"/>
+    <path d="M5 6.6c0-.5.4-.9.9-1L14.5 4.7c.6-.1 1.2.4 1.2 1v8.2c0 .5-.4.9-.9.9H5.9c-.5 0-.9-.4-.9-.9z" fill="url(#msc-scr)" stroke="#0f5bbf" stroke-width=".6"/>
+    <path d="M6.2 6.7l6.2-.9c.3 0 .4.2.2.3l-6.6 2.9z" fill="#cdeeff" opacity=".7"/>
+    <path d="M9.6 17.6h3.3l.7 4.2c.1.6-.4 1-1 1H9.9c-.6 0-1-.5-1-1z" fill="#c9cbe6" stroke="#7b7fb0" stroke-width=".8" stroke-linejoin="round"/>
+    <ellipse cx="11.3" cy="24" rx="4.6" ry="1.5" fill="#ecedf7" stroke="#9aa0c0" stroke-width=".8"/>
+  </symbol>
+  <symbol id="ic-monitor" viewBox="0 0 32 32">
+    <rect x="3" y="4" width="26" height="19" rx="1.5" fill="#e9ecf1" stroke="#4a5563"/>
+    <rect x="5" y="6" width="22" height="14.5" rx="1" fill="#2f6fd0"/>
+    <path d="M5 15c5-4 12-4 22 0v5.5H5z" fill="#7ec24a"/>
+    <ellipse cx="10" cy="9.5" rx="3.4" ry="1.1" fill="#bfe0ff" opacity=".8"/>
+    <rect x="11" y="23" width="10" height="3.4" fill="#c3cad2" stroke="#5b6675"/>
+    <rect x="7" y="26.4" width="18" height="3.2" rx="1.4" fill="#d5dbe2" stroke="#5b6675"/>
+  </symbol>
+  <symbol id="ic-user" viewBox="0 0 32 32">
+    <rect x="3" y="4" width="26" height="24" rx="3" fill="#fff" stroke="#5b6675"/>
+    <circle cx="13" cy="13" r="4.4" fill="#f2b04a" stroke="#b97b18"/>
+    <path d="M5.5 25c0-4.4 3.4-6.6 7.5-6.6s7.5 2.2 7.5 6.6" fill="#5a9be6" stroke="#2f6bb0"/>
+    <rect x="21" y="10" width="6" height="2" rx="1" fill="#2f7be8"/>
+    <rect x="21" y="15" width="6" height="2" rx="1" fill="#9aa4b0"/>
+    <rect x="21" y="20" width="6" height="2" rx="1" fill="#9aa4b0"/>
+  </symbol>
+  <symbol id="ic-gear" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="6" fill="none" stroke="#2f7be8" stroke-width="3.5"/>
+    <g fill="#e0651e"><rect x="14.2" y="1.5" width="3.6" height="6" rx="1"/><rect x="14.2" y="24.5" width="3.6" height="6" rx="1"/><rect x="1.5" y="14.2" width="6" height="3.6" rx="1"/><rect x="24.5" y="14.2" width="6" height="3.6" rx="1"/></g>
+    <g fill="#f2b04a"><rect x="5" y="5" width="3.4" height="5.6" rx="1" transform="rotate(-45 6.7 7.8)"/><rect x="23.6" y="21.4" width="3.4" height="5.6" rx="1" transform="rotate(-45 25.3 24.2)"/><rect x="21.4" y="5" width="3.4" height="5.6" rx="1" transform="rotate(45 23.1 7.8)"/><rect x="5" y="21.4" width="3.4" height="5.6" rx="1" transform="rotate(45 6.7 24.2)"/></g>
+    <circle cx="16" cy="16" r="3.2" fill="#2f7be8"/>
+  </symbol>
+  <symbol id="ic-folder" viewBox="0 0 32 32">
+    <path d="M3 8h9l3 3h14v16H3z" fill="#e8a51e" stroke="#9a6a10"/>
+    <path d="M3 12h26v15H3z" fill="#ffd766" stroke="#c98f16"/>
+    <path d="M3 12h26v4H3z" fill="#fff0c0" opacity=".7"/>
+  </symbol>
+  <symbol id="ic-mail" viewBox="0 0 32 32">
+    <rect x="3" y="7" width="26" height="18" rx="1.5" fill="#fff" stroke="#5b6675"/>
+    <path d="M3 8l13 10L29 8" fill="#eaf2fb" stroke="#3f86db" stroke-width="1.6"/>
+    <path d="M3 8h26l-13 10z" fill="#d7e8fb" stroke="#3f86db" stroke-width="1.4"/>
+    <path d="M3 25l10-8M29 25l-10-8" fill="none" stroke="#9aa4b0"/>
+  </symbol>
+  <symbol id="ic-github" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="14" fill="#1a1a1a"/>
+    <path d="M16 6c-5.5 0-10 4.5-10 10 0 4.4 2.9 8.2 6.8 9.5.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.25-4.5-1.1-4.5-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1 .8-.2 1.6-.3 2.5-.3.8 0 1.7.1 2.5.3 1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.5 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0026 16c0-5.5-4.5-10-10-10z" fill="#fff"/>
+  </symbol>
+  <symbol id="ic-linkedin" viewBox="0 0 32 32">
+    <rect x="3" y="3" width="26" height="26" rx="3" fill="#0a66c2"/>
+    <circle cx="9.2" cy="9.4" r="2.3" fill="#fff"/>
+    <rect x="7.2" y="13" width="4" height="11" fill="#fff"/>
+    <path d="M14 13h3.8v1.6c.6-1 1.9-1.9 3.7-1.9 3 0 4.5 1.9 4.5 5.3V24h-4v-5.1c0-1.4-.5-2.4-1.8-2.4-1.1 0-1.7.7-2 1.5-.1.2-.1.6-.1.9V24h-4z" fill="#fff"/>
+  </symbol>
+  <symbol id="ic-wa" viewBox="0 0 32 32">
+    <path d="M16 4a12 12 0 00-10 18l-2 6 6-2A12 12 0 1016 4z" fill="#25d366"/>
+    <path d="M12 10.5c-.4-.9-.8-.9-1.1-.9h-1c-.3 0-.9.1-1.3.6-.5.5-1.7 1.6-1.7 4s1.7 4.6 2 4.9c.2.3 3.4 5.2 8.3 7.1 4.1 1.6 4.9 1.3 5.8 1.2.9-.1 2.8-1.1 3.2-2.2.4-1.1.4-2 .3-2.2-.1-.2-.4-.3-.9-.5-.5-.3-2.8-1.4-3.3-1.5-.4-.2-.7-.3-1.1.2-.3.5-1.2 1.5-1.4 1.7-.3.3-.5.3-1 .1-.5-.3-2-.8-3.9-2.4-1.4-1.3-2.4-2.9-2.7-3.4-.3-.5 0-.7.2-1 .2-.2.5-.5.7-.8.2-.3.3-.5.5-.8.1-.3.1-.6 0-.8-.2-.3-1.1-2.7-1.6-3.6z" fill="#fff"/>
+  </symbol>
+  <symbol id="ic-msn" viewBox="0 0 32 32">
+    <defs>
+      <radialGradient id="msn-back" cx=".38" cy=".3" r=".95">
+        <stop offset="0" stop-color="#cfeef2"/><stop offset=".4" stop-color="#5fb2cc"/><stop offset="1" stop-color="#2f7d8f"/>
+      </radialGradient>
+      <radialGradient id="msn-front" cx=".35" cy=".28" r=".95">
+        <stop offset="0" stop-color="#d3f0cf"/><stop offset=".38" stop-color="#5fb86a"/><stop offset=".72" stop-color="#3f9a4e"/><stop offset="1" stop-color="#2f7d5f"/>
+      </radialGradient>
+    </defs>
+    <circle cx="10.5" cy="8.6" r="3.4" fill="url(#msn-back)"/>
+    <path d="M5 19c0-4.6 2.2-6.9 5.5-6.9S16 14.4 16 19z" fill="url(#msn-back)"/>
+    <circle cx="19.5" cy="11.8" r="4.4" fill="url(#msn-front)"/>
+    <path d="M12.6 25.5c0-6 3-8.7 6.9-8.7s6.9 2.7 6.9 8.7z" fill="url(#msn-front)"/>
+    <ellipse cx="17.8" cy="10" rx="1.5" ry="2" fill="#eafbe6" opacity=".55"/>
+  </symbol>
+  <symbol id="ic-buddy" viewBox="0 0 32 32">
+    <defs><radialGradient id="bud-g" cx=".38" cy=".28" r=".95"><stop offset="0" stop-color="#d6f2d1"/><stop offset=".4" stop-color="#5fb86a"/><stop offset=".75" stop-color="#3f9a4e"/><stop offset="1" stop-color="#2f7d5f"/></radialGradient></defs>
+    <circle cx="16" cy="10" r="5" fill="url(#bud-g)"/>
+    <path d="M6.5 27.5c0-7.2 4.3-10.7 9.5-10.7s9.5 3.5 9.5 10.7z" fill="url(#bud-g)"/>
+    <ellipse cx="13.7" cy="8.2" rx="1.6" ry="2.1" fill="#eafbe6" opacity=".5"/>
+  </symbol>
+  <symbol id="ic-msnfly" viewBox="0 0 32 32">
+    <ellipse cx="16" cy="16.5" rx="1.5" ry="7" fill="#3a3a3a"/>
+    <path d="M15 12.5c-3-5-9-6-11-3-1.6 2.5 0 5.8 4 6.8 3 .7 6 .2 7-.8z" fill="#2f9be0"/>
+    <path d="M15 18.4c-3 5-9 6-11 3-1.4-2.2 .2-4.6 3.6-5.5 3-.8 6.4-.2 7.4 .6z" fill="#57c65a"/>
+    <path d="M17 12.5c3-5 9-6 11-3 1.6 2.5 0 5.8-4 6.8-3 .7-6 .2-7-.8z" fill="#f5a623"/>
+    <path d="M17 18.4c3 5 9 6 11 3 1.4-2.2-.2-4.6-3.6-5.5-3-.8-6.4-.2-7.4 .6z" fill="#9b59b6"/>
+  </symbol>
+  <symbol id="ic-code" viewBox="0 0 32 32">
+    <rect x="3" y="6" width="26" height="20" rx="1.5" fill="#fff" stroke="#5b6675"/>
+    <rect x="3" y="6" width="26" height="5" rx="1.5" fill="#175fd0"/>
+    <text x="16" y="23" text-anchor="middle" font-family="monospace" font-size="11" fill="#175fd0">&lt;/&gt;</text>
+  </symbol>
+  <symbol id="ic-db" viewBox="0 0 32 32">
+    <ellipse cx="16" cy="8" rx="10" ry="4" fill="#c9ced6" stroke="#5b6675"/>
+    <path d="M6 8v16c0 2.2 4.5 4 10 4s10-1.8 10-4V8" fill="#dfe4ea" stroke="#5b6675"/>
+    <path d="M6 15c0 2.2 4.5 4 10 4s10-1.8 10-4M6 22c0 2.2 4.5 4 10 4s10-1.8 10-4" fill="none" stroke="#5b6675"/>
+  </symbol>
+  <symbol id="ic-browser" viewBox="0 0 32 32">
+    <rect x="3" y="5" width="26" height="22" rx="1.5" fill="#fff" stroke="#5b6675"/>
+    <rect x="3" y="5" width="26" height="6" rx="1.5" fill="#dd0031"/>
+    <circle cx="7" cy="8" r="1.1" fill="#fff"/><circle cx="11" cy="8" r="1.1" fill="#fff"/>
+    <path d="M8 19h16M16 12v14" stroke="#3f86db" fill="none" stroke-width="1.4"/>
+  </symbol>
+  <symbol id="ic-ai" viewBox="0 0 32 32">
+    <g stroke="#5b6675" fill="none"><path d="M12 4v4M20 4v4M12 24v4M20 24v4M4 12h4M4 20h4M24 12h4M24 20h4"/></g>
+    <rect x="8" y="8" width="16" height="16" rx="2" fill="#dfe4ea" stroke="#5b6675"/>
+    <rect x="12" y="12" width="8" height="8" rx="1" fill="#3f86db" stroke="#274a7a"/>
+  </symbol>
+  <symbol id="ic-cloud" viewBox="0 0 32 32">
+    <path d="M9 23a6 6 0 010-12 8 8 0 0115-1 5 5 0 011 13z" fill="#2f8beb" stroke="#175fd0"/>
+    <path d="M8 12a6 6 0 019-1" fill="none" stroke="#bfe0ff"/>
+  </symbol>
+  <symbol id="ic-plc" viewBox="0 0 32 32">
+    <rect x="4" y="6" width="24" height="20" rx="2" fill="#c0392b" stroke="#7d2318"/>
+    <rect x="6" y="9" width="20" height="8" rx="1" fill="#1c1c1c"/>
+    <g fill="#61ff8a"><rect x="8" y="11" width="3" height="1.6"/><rect x="12" y="11" width="6" height="1.6"/><rect x="8" y="14" width="9" height="1.6"/></g>
+    <g fill="#f2c14e"><rect x="7" y="20" width="3" height="3"/><rect x="12" y="20" width="3" height="3"/><rect x="17" y="20" width="3" height="3"/><rect x="22" y="20" width="3" height="3"/></g>
+  </symbol>
+  <symbol id="ic-file" viewBox="0 0 32 32">
+    <path d="M8 3h12l6 6v20H8z" fill="#fff" stroke="#5b6675"/>
+    <path d="M20 3v6h6" fill="#d8dde3" stroke="#5b6675"/>
+    <rect x="12" y="14" width="12" height="2" rx="1" fill="#175fd0"/>
+    <rect x="12" y="18" width="12" height="2" rx="1" fill="#9aa4b0"/>
+    <rect x="12" y="22" width="8" height="2" rx="1" fill="#9aa4b0"/>
+  </symbol>
+  <symbol id="ic-cv" viewBox="0 0 32 32">
+    <path d="M7 3h13l5 5v21H7z" fill="#fff" stroke="#5b6675"/>
+    <path d="M20 3v5h5" fill="#d8dde3" stroke="#5b6675"/>
+    <circle cx="13" cy="14" r="3" fill="#f2b04a" stroke="#b97b18"/>
+    <path d="M9 22c0-2.5 2-4 4-4s4 1.5 4 4" fill="#5a9be6"/>
+    <rect x="18" y="13" width="5" height="1.6" fill="#9aa4b0"/><rect x="18" y="16" width="5" height="1.6" fill="#9aa4b0"/><rect x="10" y="24.5" width="13" height="1.6" fill="#c9ced6"/>
+  </symbol>
+  <symbol id="ic-grad" viewBox="0 0 32 32">
+    <path d="M16 6L3 12l13 6 13-6z" fill="#2b2b2b" stroke="#111"/>
+    <path d="M8 15v5c0 2 3.6 3.6 8 3.6s8-1.6 8-3.6v-5" fill="#3f86db" stroke="#274a7a"/>
+    <path d="M29 12v6" stroke="#111" stroke-width="1.4"/><circle cx="29" cy="19" r="1.6" fill="#e0651e"/>
+  </symbol>
+  <symbol id="ic-cert" viewBox="0 0 32 32">
+    <rect x="4" y="5" width="24" height="17" rx="1.5" fill="#fff" stroke="#5b6675"/>
+    <rect x="7" y="8" width="12" height="1.8" fill="#9aa4b0"/><rect x="7" y="12" width="14" height="1.8" fill="#c9ced6"/><rect x="7" y="15.5" width="9" height="1.8" fill="#c9ced6"/>
+    <circle cx="23" cy="21" r="5" fill="#e0651e" stroke="#9a3f12"/>
+    <path d="M20.5 25l-1 5 3.5-2 3.5 2-1-5" fill="#e0651e" stroke="#9a3f12"/>
+    <circle cx="23" cy="21" r="2.2" fill="#ffd479"/>
+  </symbol>
+  <symbol id="ic-key" viewBox="0 0 32 32">
+    <circle cx="11" cy="12" r="6.5" fill="#ffd479" stroke="#b97b18" stroke-width="2"/>
+    <circle cx="11" cy="12" r="2.4" fill="#fff8e6"/>
+    <path d="M15.5 16.5L27 28M23 25l3-3M25 27l3-3" stroke="#e0a020" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="ic-power" viewBox="0 0 32 32">
+    <path d="M16 5v11" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M9 9a10 10 0 1014 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="ic-vol" viewBox="0 0 32 32">
+    <path d="M6 12h5l7-6v20l-7-6H6z" fill="#fff"/>
+    <path d="M22 11a7 7 0 010 10M25 8a11 11 0 010 16" stroke="#fff" stroke-width="2" fill="none"/>
+  </symbol>
+  <!-- Bandeiras -->
+  <symbol id="fl-br" viewBox="0 0 20 14"><rect width="20" height="14" fill="#2a9c3b"/><path d="M10 1.4L18.6 7 10 12.6 1.4 7z" fill="#f5d500"/><circle cx="10" cy="7" r="3" fill="#1c3f9c"/><path d="M7.4 6.2a6 6 0 015.2.6" stroke="#fff" stroke-width=".7" fill="none"/></symbol>
+  <symbol id="fl-us" viewBox="0 0 20 14"><rect width="20" height="14" fill="#fff"/><g fill="#b22234"><rect width="20" height="1.08"/><rect y="2.15" width="20" height="1.08"/><rect y="4.3" width="20" height="1.08"/><rect y="6.46" width="20" height="1.08"/><rect y="8.6" width="20" height="1.08"/><rect y="10.77" width="20" height="1.08"/><rect y="12.9" width="20" height="1.08"/></g><rect width="9" height="7.55" fill="#3c3b6e"/></symbol>
+</svg>
+
+<!-- Área de trabalho -->
+<div class="desktop" id="desktop">
+  <nav class="desktop__icons" aria-label="Atalhos">
+    <button class="desk-icon" type="button" data-nav="win-welcome"><svg class="desk-icon__ico"><use href="#ic-computer"/></svg><span class="desk-icon__label" data-i18n="desk_inicio">Início</span></button>
+    <button class="desk-icon" type="button" data-nav="win-sobre"><svg class="desk-icon__ico"><use href="#ic-user"/></svg><span class="desk-icon__label" data-i18n="desk_sobre">Sobre Mim</span></button>
+    <button class="desk-icon" type="button" data-nav="win-skills"><svg class="desk-icon__ico"><use href="#ic-gear"/></svg><span class="desk-icon__label" data-i18n="desk_skills">Habilidades</span></button>
+    <button class="desk-icon" type="button" data-nav="win-cv"><svg class="desk-icon__ico"><use href="#ic-cv"/></svg><span class="desk-icon__label" data-i18n="desk_exp">Currículo</span></button>
+    <button class="desk-icon" type="button" data-nav="win-projetos"><svg class="desk-icon__ico"><use href="#ic-folder"/></svg><span class="desk-icon__label" data-i18n="desk_proj">Projetos</span></button>
+    <button class="desk-icon" type="button" data-nav="win-contato"><svg class="desk-icon__ico"><use href="#ic-msn"/></svg><span class="desk-icon__label" data-i18n="desk_contato">Contato</span></button>
+    <a class="desk-icon" href="https://github.com/ewerton336/" target="_blank" rel="noopener"><svg class="desk-icon__ico"><use href="#ic-github"/></svg><span class="desk-icon__label">GitHub</span></a>
+    <a class="desk-icon" href="https://www.linkedin.com/in/ewerton-guimaraes/" target="_blank" rel="noopener"><svg class="desk-icon__ico"><use href="#ic-linkedin"/></svg><span class="desk-icon__label">LinkedIn</span></a>
+  </nav>
+
+  <!-- Bem-vindo -->
+  <section class="win" id="win-welcome" style="--w:668px" data-task="task_welcome" data-icon="ic-computer">
+    <header class="win__title">
+      <svg class="win__title-ico"><use href="#ic-computer"/></svg>
+      <span class="win__title-text" data-i18n="title_welcome">Bem-vindo — Ewerton.exe</span>
+      <span class="win__controls"><button class="title-btn" type="button" data-act="min" aria-label="Minimizar"><span class="glyph glyph--min"></span></button><button class="title-btn" type="button" data-act="max" aria-label="Maximizar"><span class="glyph glyph--max"></span></button><button class="title-btn title-btn--close" type="button" data-act="close" aria-label="Fechar">✕</button></span>
+    </header>
+    <div class="win__body">
+      <div class="hero">
+        <div class="hero__photo sunken"><img src="assets/perfil.png" alt="Ewerton Guimarães" loading="lazy"></div>
+        <div class="hero__main">
+          <span class="eyebrow">C:\PORTFOLIO&gt; ewerton.exe</span>
+          <h1 class="hero__name">Ewerton Guimarães</h1>
+          <div class="hero__role">Senior Software Engineer</div>
+          <p class="hero__tagline" data-i18n="welcome_tagline">Engenheiro de software sênior com 6+ anos criando sistemas de missão crítica — do backend .NET às interfaces Angular/React, com integração industrial (PLCs Rockwell) e IA aplicada.</p>
+          <div class="btn-row">
+            <button class="btn btn--default" type="button" data-nav="win-projetos"><svg class="btn__ico"><use href="#ic-folder"/></svg> <span data-i18n="btn_projetos">Ver Projetos</span></button>
+            <button class="btn" type="button" data-nav="win-cv"><svg class="btn__ico"><use href="#ic-cv"/></svg> <span data-i18n="btn_cv">Currículo</span></button>
+            <button class="btn" type="button" data-nav="win-contato"><svg class="btn__ico"><use href="#ic-msn"/></svg> <span data-i18n="btn_contato">Contato</span></button>
           </div>
         </div>
       </div>
-      <div class="scroll-indicator">
-        <div class="mouse"></div>
-      </div>
-    </section>
+      <div class="win__status"><span class="cell sunken" data-i18n="status_ready">Pronto</span><span class="cell sunken" data-i18n="status_hint">Clique nos ícones da área de trabalho para abrir cada janela</span></div>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-      <div class="container">
-        <h2 class="section-title">
-          <span class="title-number">01.</span> Sobre Mim
-          <div class="title-line"></div>
-        </h2>
-        <div class="about-content">
-          <div class="about-text">
-            <p class="fade-in">
-              Sou um desenvolvedor graduado apaixonado por tecnologia e
-              inovação, com especialização em
-              <span class="highlight-green">.NET Core e Framework</span>.
-              Atualmente trabalho na
-              <span class="highlight-purple">Becomex LAB</span>, onde contribuo
-              para o desenvolvimento de soluções empresariais robustas.
-            </p>
-            <p class="fade-in">
-              Minha jornada no desenvolvimento começou com a curiosidade de
-              entender como as coisas funcionam por baixo dos panos. Hoje, essa
-              curiosidade se transformou em paixão por criar aplicações que
-              resolvem problemas reais e impactam positivamente a vida das
-              pessoas.
-            </p>
-            <p class="fade-in">
-              Estou constantemente aprendendo e me atualizando com as
-              tecnologias mais recentes. Com experiência em
-              <span class="highlight-green"
-                >desenvolvimento web moderno incluindo React e AngularJS</span
-              >, estou sempre explorando novas tecnologias e aprimorando minhas
-              habilidades para me tornar um desenvolvedor ainda mais versátil.
-            </p>
-            <div class="about-stats">
-              <div class="stat-item fade-in">
-                <span class="stat-number">5+</span>
-                <span class="stat-label">Anos de Experiência</span>
-              </div>
-              <div class="stat-item fade-in">
-                <span class="stat-number">10+</span>
-                <span class="stat-label">Projetos Concluídos</span>
-              </div>
-              <div class="stat-item fade-in">
-                <span class="stat-number">∞</span>
-                <span class="stat-label">Vontade de Aprender</span>
-              </div>
-            </div>
-          </div>
+  <!-- Sobre Mim -->
+  <section class="win" id="win-sobre" style="--w:520px" data-task="task_sobre" data-icon="ic-user">
+    <header class="win__title">
+      <svg class="win__title-ico"><use href="#ic-user"/></svg>
+      <span class="win__title-text" data-i18n="title_sobre">Sobre Mim — Bloco de Notas</span>
+      <span class="win__controls"><button class="title-btn" type="button" data-act="min" aria-label="Minimizar"><span class="glyph glyph--min"></span></button><button class="title-btn" type="button" data-act="max" aria-label="Maximizar"><span class="glyph glyph--max"></span></button><button class="title-btn title-btn--close" type="button" data-act="close" aria-label="Fechar">✕</button></span>
+    </header>
+    <nav class="win__menubar" aria-hidden="true"><span data-i18n="menu_file"><u>A</u>rquivo</span><span data-i18n="menu_edit"><u>E</u>ditar</span><span data-i18n="menu_format">For<u>m</u>atar</span><span data-i18n="menu_view">E<u>x</u>ibir</span><span data-i18n="menu_help">Aj<u>u</u>da</span></nav>
+    <div class="win__body">
+      <div class="notepad sunken">
+        <p data-i18n="sobre_p1">Sou Ewerton Guimarães, Senior Software Engineer com 6+ anos de experiência no desenvolvimento de sistemas para ambientes de missão crítica. Atuo no desenvolvimento e na modernização de aplicações com .NET (Core/Framework) e Angular, com foco em alta disponibilidade, performance e confiabilidade.</p>
+        <p data-i18n="sobre_p2">Tenho experiência na integração com sistemas industriais, incluindo comunicação com PLCs (Rockwell) e processamento de dados em tempo real. Aplico Inteligência Artificial de forma prática no dia a dia: agentes de IA para acelerar o desenvolvimento, automação de tarefas e integração de LLMs (incluindo RAG) em soluções reais.</p>
+        <p data-i18n="sobre_p3">Cheguei a construir do zero um driver de comunicação para PLC usando IA como par técnico, derrubando barreiras de custo e conhecimento. Forte atuação em modernização de sistemas legados, arquitetura de software e APIs escaláveis.</p>
+      </div>
+      <div class="win__status"><span class="cell sunken">Ln 1, Col 1</span><span class="cell sunken">100%</span></div>
+    </div>
+  </section>
+
+  <!-- Habilidades -->
+  <section class="win" id="win-skills" style="--w:512px" data-task="task_skills" data-icon="ic-gear">
+    <header class="win__title">
+      <svg class="win__title-ico"><use href="#ic-gear"/></svg>
+      <span class="win__title-text" data-i18n="title_skills">Habilidades — Painel de Controle</span>
+      <span class="win__controls"><button class="title-btn" type="button" data-act="min" aria-label="Minimizar"><span class="glyph glyph--min"></span></button><button class="title-btn" type="button" data-act="max" aria-label="Maximizar"><span class="glyph glyph--max"></span></button><button class="title-btn title-btn--close" type="button" data-act="close" aria-label="Fechar">✕</button></span>
+    </header>
+    <div class="win__body">
+      <p class="skills-hint" data-i18n="skills_hint">Tecnologias que uso no dia a dia:</p>
+      <div class="sunken" style="padding:2px 2px 12px">
+        <div class="skill-cat" data-i18n="cat_backend">Backend</div>
+        <div class="skill-grid" style="border:none">
+          <div class="tile"><svg class="tile__ico"><use href="#ic-code"/></svg><span class="tile__label">C#</span></div>
+          <div class="tile"><svg class="tile__ico"><use href="#ic-code"/></svg><span class="tile__label">.NET 10</span></div>
+          <div class="tile"><svg class="tile__ico"><use href="#ic-code"/></svg><span class="tile__label">ASP.NET MVC</span></div>
+          <div class="tile"><svg class="tile__ico"><use href="#ic-code"/></svg><span class="tile__label">Entity FW</span></div>
+          <div class="tile"><svg class="tile__ico"><use href="#ic-browser"/></svg><span class="tile__label">REST APIs</span></div>
+          <div class="tile"><svg class="tile__ico"><use href="#ic-cloud"/></svg><span class="tile__label">Mensageria</span></div>
         </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-      <div class="container">
-        <h2 class="section-title">
-          <span class="title-number">02.</span> Habilidades & Tecnologias
-          <div class="title-line"></div>
-        </h2>
-        <div class="skills-grid">
-          <!-- Backend -->
-          <div class="skill-category fade-in">
-            <h3 class="category-title">Backend</h3>
-            <div class="skill-items">
-              <div class="skill-item">
-                <div class="skill-icon">C#</div>
-                <span class="skill-name">C#</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">.NET</div>
-                <span class="skill-name">.NET Core</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">ASP</div>
-                <span class="skill-name">ASP.NET</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">API</div>
-                <span class="skill-name">REST API</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">MSG</div>
-                <span class="skill-name">Mensageria</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Frontend -->
-          <div class="skill-category fade-in">
-            <h3 class="category-title">Frontend</h3>
-            <div class="skill-items">
-              <div class="skill-item">
-                <div class="skill-icon">JS</div>
-                <span class="skill-name">JavaScript</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">TS</div>
-                <span class="skill-name">TypeScript</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">React</div>
-                <span class="skill-name">React</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">Angular</div>
-                <span class="skill-name">AngularJS</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">HTML</div>
-                <span class="skill-name">HTML5</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">CSS</div>
-                <span class="skill-name">CSS3</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Database -->
-          <div class="skill-category fade-in">
-            <h3 class="category-title">Database</h3>
-            <div class="skill-items">
-              <div class="skill-item">
-                <div class="skill-icon">MS</div>
-                <span class="skill-name">MS SQL Server</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">MY</div>
-                <span class="skill-name">MySQL</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">PG</div>
-                <span class="skill-name">PostgreSQL</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">MA</div>
-                <span class="skill-name">MariaDB</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">OR</div>
-                <span class="skill-name">Oracle</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Ferramentas e Outros -->
-          <div class="skill-category fade-in">
-            <h3 class="category-title">Ferramentas e Outros</h3>
-            <div class="skill-items">
-              <div class="skill-item">
-                <div class="skill-icon">GIT</div>
-                <span class="skill-name">Git</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">MS</div>
-                <span class="skill-name">Microsserviços</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">CQRS</div>
-                <span class="skill-name">CQRS</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">Agile</div>
-                <span class="skill-name">Scrum e Kanban</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">IA</div>
-                <span class="skill-name">Agentes de código e review</span>
-              </div>
-            </div>
-          </div>
+        <div class="skill-cat" data-i18n="cat_frontend">Frontend</div>
+        <div class="skill-grid" style="border:none">
+          <div class="tile"><svg class="tile__ico"><use href="#ic-browser"/></svg><span class="tile__label">Angular</span></div>
+          <div class="tile"><svg class="tile__ico"><use href="#ic-browser"/></svg><span class="tile__label">React</span></div>
+          <div class="tile"><svg class="tile__ico"><use href="#ic-code"/></svg><span class="tile__label">Next.js</span></div>
+          <div class="tile"><svg class="tile__ico"><use href="#ic-code"/></svg><span class="tile__label">TypeScript</span></div>
+          <div class="tile"><svg class="tile__ico"><use href="#ic-code"/></svg><span class="tile__label">JavaScript</span></div>
+        </div>
+        <div class="skill-cat" data-i18n="cat_data">Banco de Dados</div>
+        <div class="skill-grid" style="border:none">
+          <div class="tile"><svg class="tile__ico"><use href="#ic-db"/></svg><span class="tile__label">Oracle</span></div>
+          <div class="tile"><svg class="tile__ico"><use href="#ic-db"/></svg><span class="tile__label">SQL Server</span></div>
+          <div class="tile"><svg class="tile__ico"><use href="#ic-db"/></svg><span class="tile__label">MySQL</span></div>
+        </div>
+        <div class="skill-cat" data-i18n="cat_devops">DevOps, IA &amp; Automação</div>
+        <div class="skill-grid" style="border:none">
+          <div class="tile"><svg class="tile__ico"><use href="#ic-code"/></svg><span class="tile__label">Azure DevOps</span></div>
+          <div class="tile"><svg class="tile__ico"><use href="#ic-code"/></svg><span class="tile__label">Git · CI/CD</span></div>
+          <div class="tile"><svg class="tile__ico"><use href="#ic-plc"/></svg><span class="tile__label">PLC Rockwell</span></div>
+          <div class="tile"><svg class="tile__ico"><use href="#ic-ai"/></svg><span class="tile__label">Agentes IA</span></div>
+          <div class="tile"><svg class="tile__ico"><use href="#ic-ai"/></svg><span class="tile__label">RAG · LLM</span></div>
+          <div class="tile"><svg class="tile__ico"><use href="#ic-gear"/></svg><span class="tile__label">Scrum</span></div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-      <div class="container">
-        <h2 class="section-title">
-          <span class="title-number">03.</span> Projetos em Destaque
-          <div class="title-line"></div>
-        </h2>
-        <div class="projects-grid" id="projects-container">
-          <!-- Projects will be loaded dynamically from GitHub API -->
-          <div class="loading-spinner">
-            <div class="spinner"></div>
-            <p>Carregando projetos do GitHub...</p>
-          </div>
+  <!-- Currículo / Experiência -->
+  <section class="win" id="win-cv" style="--w:600px" data-task="task_exp" data-icon="ic-cv">
+    <header class="win__title">
+      <svg class="win__title-ico"><use href="#ic-cv"/></svg>
+      <span class="win__title-text" data-i18n="title_cv">Currículo — Meu Computador</span>
+      <span class="win__controls"><button class="title-btn" type="button" data-act="min" aria-label="Minimizar"><span class="glyph glyph--min"></span></button><button class="title-btn" type="button" data-act="max" aria-label="Maximizar"><span class="glyph glyph--max"></span></button><button class="title-btn title-btn--close" type="button" data-act="close" aria-label="Fechar">✕</button></span>
+    </header>
+    <div class="win__body">
+      <div class="cv-section">
+        <div class="cv-h"><svg><use href="#ic-cv"/></svg> <span data-i18n="cv_exp">Experiência Profissional</span></div>
+        <div class="job">
+          <div class="job__head"><span class="job__role" data-i18n="job1_role">Senior Software Engineer · Automação Industrial</span><span class="job__date">03/2026 — <span data-i18n="cv_now">atual</span></span></div>
+          <div class="job__co"><b>Tesis IT &amp; Automation</b> · <span class="job__place">Cubatão, SP</span></div>
+          <ul class="job__list">
+            <li data-i18n="job1_b1">Sistemas de alta disponibilidade (nível N2) para ambientes industriais</li>
+            <li data-i18n="job1_b2">Modernização de aplicações legadas com .NET 10 e Angular</li>
+            <li data-i18n="job1_b3">Integração com PLCs Rockwell e processamento de dados em tempo real</li>
+            <li data-i18n="job1_b4">Arquiteturas escaláveis e resilientes; APIs e serviços de backend</li>
+          </ul>
         </div>
-        <div class="projects-footer">
-          <a
-            href="https://github.com/ewerton336?tab=repositories"
-            target="_blank"
-            class="btn btn-outline"
-          >
-            Ver Todos os Projetos no GitHub
-          </a>
+        <div class="job">
+          <div class="job__head"><span class="job__role" data-i18n="job2_role">Desenvolvedor de Software</span><span class="job__date">10/2022 — 03/2026</span></div>
+          <div class="job__co"><b>Becomex</b> · <span class="job__place">Campinas, SP</span></div>
+          <ul class="job__list">
+            <li data-i18n="job2_b1">Mentoria de desenvolvedores juniores e estagiários</li>
+            <li data-i18n="job2_b2">COD — Certificado de Origem Digital: React/Next.js, Angular, .NET, EF, ABP.IO, Oracle e SQL Server</li>
+            <li data-i18n="job2_b3">EFD-Reinf: ASP.NET MVC, Azure DevOps, FluentValidation e AutoMapper</li>
+            <li data-i18n="job2_b4">Microserviços em .NET Core, CI/CD, TDD e DDD</li>
+          </ul>
         </div>
       </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2 class="section-title">
-          <span class="title-number">04.</span> Entre em Contato
-          <div class="title-line"></div>
-        </h2>
-        <div class="contact-content">
-          <div class="contact-info">
-            <h3>Vamos conversar!</h3>
-            <p>
-              Estou sempre aberto a discutir novos projetos, oportunidades
-              criativas ou parcerias. Se você tem alguma ideia ou apenas quer
-              dizer oi, sinta-se à vontade para me contatar!
-            </p>
-            <div class="contact-methods">
-              <a
-                href="mailto:ewertonguimaraes2@gmail.com"
-                class="contact-method fade-in"
-              >
-                <div class="method-icon">✉</div>
-                <div class="method-info">
-                  <span class="method-label">Email</span>
-                  <span class="method-value">ewertonguimaraes2@gmail.com</span>
-                </div>
-              </a>
-              <a
-                href="https://github.com/ewerton336"
-                target="_blank"
-                class="contact-method fade-in"
-              >
-                <div class="method-icon">⚙</div>
-                <div class="method-info">
-                  <span class="method-label">GitHub</span>
-                  <span class="method-value">@ewerton336</span>
-                </div>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/ewerton-guimar%C3%A3es-b97579113/"
-                target="_blank"
-                class="contact-method fade-in"
-              >
-                <div class="method-icon">in</div>
-                <div class="method-info">
-                  <span class="method-label">LinkedIn</span>
-                  <span class="method-value">Ewerton Guimarães</span>
-                </div>
-              </a>
-              <a
-                href="https://wa.me/5513997827870"
-                target="_blank"
-                class="contact-method fade-in"
-              >
-                <div class="method-icon">WA</div>
-                <div class="method-info">
-                  <span class="method-label">WhatsApp</span>
-                  <span class="method-value">(13) 99782-7870</span>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="contact-form-wrapper">
-            <form id="contact-form" class="contact-form">
-              <div class="form-group">
-                <label for="name">Nome</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  placeholder="Seu nome"
-                />
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  placeholder="seu@email.com"
-                />
-              </div>
-              <div class="form-group">
-                <label for="subject">Assunto</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  required
-                  placeholder="Assunto da mensagem"
-                />
-              </div>
-              <div class="form-group">
-                <label for="message">Mensagem</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows="5"
-                  placeholder="Sua mensagem..."
-                ></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">
-                Enviar Mensagem
-              </button>
-            </form>
-          </div>
+      <div class="cv-section">
+        <div class="cv-h"><svg><use href="#ic-grad"/></svg> <span data-i18n="cv_edu">Formação Acadêmica</span></div>
+        <div class="edu-grid">
+          <div class="edu"><svg><use href="#ic-grad"/></svg><div><div class="edu__t" data-i18n="edu1_t">Tecnólogo em Análise e Desenvolvimento de Sistemas</div><div class="edu__s">Fatec Praia Grande · 2020 – 2023</div></div></div>
+          <div class="edu"><svg><use href="#ic-grad"/></svg><div><div class="edu__t" data-i18n="edu2_t">MBA — Segurança da Informação</div><div class="edu__s">Descomplica · 2020 – 2021</div></div></div>
         </div>
       </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <p>
-            Desenvolvido por
-            <span class="highlight-purple">Ewerton Guimarães</span>
-          </p>
-          <p>© 2025 - Todos os direitos reservados</p>
-        </div>
-        <div class="footer-social">
-          <a
-            href="https://github.com/ewerton336"
-            target="_blank"
-            class="social-link"
-            aria-label="GitHub"
-            >GitHub</a
-          >
-          <a
-            href="https://www.linkedin.com/in/ewerton-guimar%C3%A3es-b97579113/"
-            target="_blank"
-            class="social-link"
-            aria-label="LinkedIn"
-            >LinkedIn</a
-          >
-          <a
-            href="mailto:ewertonguimaraes2@gmail.com"
-            class="social-link"
-            aria-label="Email"
-            >Email</a
-          >
-          <a
-            href="https://wa.me/5513997827870"
-            target="_blank"
-            class="social-link"
-            aria-label="WhatsApp"
-            >WhatsApp</a
-          >
+      <div class="cv-section">
+        <div class="cv-h"><svg><use href="#ic-cert"/></svg> <span data-i18n="cv_cert">Licenças &amp; Certificações</span></div>
+        <div class="cert-list">
+          <div class="cert"><svg><use href="#ic-cert"/></svg><span>Oracle Cloud Data Management 2023 Certified Foundations Associate</span></div>
+          <div class="cert"><svg><use href="#ic-cert"/></svg><span>Oracle Cloud Infrastructure 2022 Certified Foundations Associate</span></div>
+          <div class="cert"><svg><use href="#ic-cert"/></svg><span data-i18n="cert3">Scrum · Metodologias Ágeis</span></div>
         </div>
       </div>
-    </footer>
+    </div>
+  </section>
 
-    <!-- Scripts -->
-    <script src="js/particles.js"></script>
-    <script src="js/github.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+  <!-- Projetos -->
+  <section class="win" id="win-projetos" style="--w:760px" data-task="task_proj" data-icon="ic-folder">
+    <header class="win__title">
+      <svg class="win__title-ico"><use href="#ic-folder"/></svg>
+      <span class="win__title-text" data-i18n="title_proj">Projetos — C:\Projetos</span>
+      <span class="win__controls"><button class="title-btn" type="button" data-act="min" aria-label="Minimizar"><span class="glyph glyph--min"></span></button><button class="title-btn" type="button" data-act="max" aria-label="Maximizar"><span class="glyph glyph--max"></span></button><button class="title-btn title-btn--close" type="button" data-act="close" aria-label="Fechar">✕</button></span>
+    </header>
+    <div class="win__body">
+      <div class="explorer-bar">
+        <button class="btn" type="button" aria-hidden="true" tabindex="-1">&laquo; <span data-i18n="back">Voltar</span></button>
+        <div class="explorer-bar__addr"><span class="addr-label" data-i18n="address">Endereço</span><div class="addr-field sunken"><svg><use href="#ic-folder"/></svg> C:\Projetos\</div></div>
+      </div>
+      <p class="proj-hint" data-i18n="proj_hint">Alguns dos meus projetos — todos disponíveis no GitHub. Clique em “Código” para abrir o repositório.</p>
+      <div class="proj-grid">
+        <article class="proj raised">
+          <div class="proj__head"><svg class="proj__ico"><use href="#ic-plc"/></svg><div><div class="proj__title">RockwellTagReader</div><div class="proj__sub">C# · EtherNet/IP</div></div></div>
+          <p class="proj__desc sunken" data-i18n="proj1_desc">Cliente EtherNet/IP + CIP 100% em C# para CLPs Allen-Bradley (ControlLogix/CompactLogix), sem dependências nativas. Faz browse completo das tags (inclusive UDTs) e leitura/escrita em lote em milissegundos. Economiza US$ 500 por máquina em licenças.</p>
+          <div class="tags"><span class="tag">C#</span><span class="tag">PLC</span><span class="tag">EtherNet/IP</span></div>
+          <div class="btn-row"><a class="btn" href="https://github.com/ewerton336/RockwellTagReader" target="_blank" rel="noopener" data-i18n="code">Código</a></div>
+        </article>
+        <article class="proj raised">
+          <div class="proj__head"><svg class="proj__ico"><use href="#ic-computer"/></svg><div><div class="proj__title">TELA-ELEVADOR</div><div class="proj__sub">React · .NET</div></div></div>
+          <p class="proj__desc sunken" data-i18n="proj2_desc">Painel digital de avisos para elevadores: busca notícias do dia, exibe previsão do tempo e permite ao síndico publicar avisos, fotos e vídeos — acabando com o papel colado no elevador. Front em React, backend em .NET.</p>
+          <div class="tags"><span class="tag">React</span><span class="tag">.NET</span><span class="tag">TypeScript</span></div>
+          <div class="btn-row"><a class="btn" href="https://github.com/ewerton336/TELA-ELEVADOR-WEB" target="_blank" rel="noopener">Web</a><a class="btn" href="https://github.com/ewerton336/TELA-ELEVADOR-SERVER" target="_blank" rel="noopener">Server</a></div>
+        </article>
+        <article class="proj raised">
+          <div class="proj__head"><svg class="proj__ico"><use href="#ic-code"/></svg><div><div class="proj__title">ApiReceitas</div><div class="proj__sub">C# · SQLite</div></div></div>
+          <p class="proj__desc sunken" data-i18n="proj3_desc">API de receitas construída com SQLite e Command Handler, aplicando o padrão CQRS para separar comandos e consultas de forma limpa e testável.</p>
+          <div class="tags"><span class="tag">C#</span><span class="tag">CQRS</span><span class="tag">SQLite</span></div>
+          <div class="btn-row"><a class="btn" href="https://github.com/ewerton336/ApiReceitas" target="_blank" rel="noopener" data-i18n="code">Código</a></div>
+        </article>
+        <article class="proj raised">
+          <div class="proj__head"><svg class="proj__ico"><use href="#ic-file"/></svg><div><div class="proj__title">ExtratorZipZpl</div><div class="proj__sub">C# · Automação</div></div></div>
+          <p class="proj__desc sunken" data-i18n="proj4_desc">Extrai arquivos no formato ZPL de pastas compactadas e envia automaticamente para impressão de etiquetas — automação de um fluxo manual e repetitivo de chão de fábrica.</p>
+          <div class="tags"><span class="tag">C#</span><span class="tag">ZPL</span><span class="tag">Automação</span></div>
+          <div class="btn-row"><a class="btn" href="https://github.com/ewerton336/ExtratorZipZpl" target="_blank" rel="noopener" data-i18n="code">Código</a></div>
+        </article>
+        <article class="proj raised">
+          <div class="proj__head"><svg class="proj__ico"><use href="#ic-db"/></svg><div><div class="proj__title">BackEnd-Fipe</div><div class="proj__sub">C# · API</div></div></div>
+          <p class="proj__desc sunken" data-i18n="proj5_desc">API para consulta e exibição da Tabela FIPE, consumindo a fonte oficial e expondo os dados de forma organizada para o front-end.</p>
+          <div class="tags"><span class="tag">C#</span><span class="tag">REST</span><span class="tag">FIPE</span></div>
+          <div class="btn-row"><a class="btn" href="https://github.com/ewerton336/BackEnd-Fipe" target="_blank" rel="noopener" data-i18n="code">Código</a></div>
+        </article>
+        <article class="proj raised">
+          <div class="proj__head"><svg class="proj__ico"><use href="#ic-ai"/></svg><div><div class="proj__title">claude-configs</div><div class="proj__sub">DevTools · IA</div></div></div>
+          <p class="proj__desc sunken" data-i18n="proj6_desc">Configurações e presets pessoais para Claude Code / OpenClaude — automação do meu fluxo de desenvolvimento com agentes de IA.</p>
+          <div class="tags"><span class="tag">IA</span><span class="tag">DevTools</span><span class="tag">Automação</span></div>
+          <div class="btn-row"><a class="btn" href="https://github.com/ewerton336/claude-configs" target="_blank" rel="noopener" data-i18n="code">Código</a></div>
+        </article>
+      </div>
+      <div class="btn-row"><a class="btn" href="https://github.com/ewerton336?tab=repositories" target="_blank" rel="noopener"><svg class="btn__ico"><use href="#ic-github"/></svg> <span data-i18n="proj_all">Ver todos os repositórios</span></a></div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section class="win" id="win-contato" style="--w:412px" data-task="task_contato" data-icon="ic-msn">
+    <header class="win__title">
+      <svg class="win__title-ico"><use href="#ic-msn"/></svg>
+      <span class="win__title-text" data-i18n="title_contato">MSN Messenger</span>
+      <span class="win__controls"><button class="title-btn" type="button" data-act="min" aria-label="Minimizar"><span class="glyph glyph--min"></span></button><button class="title-btn" type="button" data-act="max" aria-label="Maximizar"><span class="glyph glyph--max"></span></button><button class="title-btn title-btn--close" type="button" data-act="close" aria-label="Fechar">✕</button></span>
+    </header>
+    <nav class="msn__menu" aria-hidden="true"><span data-i18n="menu_file"><u>A</u>rquivo</span><span data-i18n="msn_m_contacts">Cont<u>a</u>tos</span><span data-i18n="msn_m_actions"><u>A</u>ções</span><span data-i18n="msn_m_tools"><u>F</u>erramentas</span><span data-i18n="menu_help">Aj<u>u</u>da</span></nav>
+    <div class="win__body">
+      <div class="msn">
+        <div class="msn__brand"><svg><use href="#ic-msnfly"/></svg><span class="wm">msn</span> <span class="wm-sub">Messenger</span></div>
+        <div class="msn__me">
+          <div class="msn__ava"><img src="assets/perfil.png" alt="Ewerton"></div>
+          <div class="msn__id">
+            <div class="msn__name">Ewerton Guimarães <span class="st" data-i18n="msn_online">(Online)</span> <span class="tri"></span></div>
+            <div class="msn__psm" data-i18n="msn_psm">Senior Software Engineer · aberto a novas conexões</div>
+          </div>
+        </div>
+        <div class="msn__panel">
+          <div class="msn__note"><svg><use href="#ic-info"/></svg> <span data-i18n="msn_note">Clique em um contato para falar comigo — abre no aplicativo correspondente.</span></div>
+          <div class="msn__add"><svg><use href="#ic-buddy"/></svg> <span data-i18n="msn_add">Adicionar um contato</span></div>
+          <div class="msn__group"><span class="msn__tri"></span> <span data-i18n="msn_group">Meus Contatos (4/4 online)</span></div>
+          <a class="msn__buddy" href="https://github.com/ewerton336/" target="_blank" rel="noopener"><svg><use href="#ic-buddy"/></svg><span class="bn">GitHub</span><span class="bs">— github.com/ewerton336</span></a>
+          <a class="msn__buddy" href="https://www.linkedin.com/in/ewerton-guimaraes/" target="_blank" rel="noopener"><svg><use href="#ic-buddy"/></svg><span class="bn">LinkedIn</span><span class="bs">— in/ewerton-guimaraes</span></a>
+          <a class="msn__buddy" href="https://wa.me/5513997827870" target="_blank" rel="noopener"><svg><use href="#ic-buddy"/></svg><span class="bn">WhatsApp</span><span class="bs">— (13) 99782-7870</span></a>
+          <a class="msn__buddy" href="mailto:ewertonguimaraes2@gmail.com"><svg><use href="#ic-buddy"/></svg><span class="bn" data-i18n="c_email">E-mail</span><span class="bs">— ewertonguimaraes2@gmail.com</span></a>
+        </div>
+        <div class="msn__foot"><svg width="20" height="20"><use href="#ic-msnfly"/></svg><span class="wm">msn</span> <span class="wm-sub">Messenger</span> <span class="net">.net</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre o Windows / Ativação -->
+  <section class="win" id="win-ativa" style="--w:460px" data-task="task_ativa" data-icon="ic-key">
+    <header class="win__title">
+      <svg class="win__title-ico"><use href="#ic-key"/></svg>
+      <span class="win__title-text" data-i18n="title_ativa">Sobre o Windows</span>
+      <span class="win__controls"><button class="title-btn" type="button" data-act="min" aria-label="Minimizar"><span class="glyph glyph--min"></span></button><button class="title-btn" type="button" data-act="max" aria-label="Maximizar"><span class="glyph glyph--max"></span></button><button class="title-btn title-btn--close" type="button" data-act="close" aria-label="Fechar">✕</button></span>
+    </header>
+    <div class="win__body">
+      <div class="about-win">
+        <div class="about-hd">
+          <div class="about-logo"><svg class="flag" viewBox="0 0 22 20"><g transform="skewX(-9)"><path d="M2 1h8v8H2z" fill="#f24b3d"/><path d="M11 1h8v8h-8z" fill="#57c65a"/><path d="M2 10h8v8H2z" fill="#2f9bf0"/><path d="M11 10h8v8h-8z" fill="#ffcc21"/></g></svg><b>Ewerton<i>XP</i> <sup>dev</sup></b></div>
+        </div>
+        <div class="about-grid">
+          <div data-i18n="about_ver">Versão 5.1 (Build 2026 · portfolio_sp3)</div>
+          <div><span class="k" data-i18n="about_reg">Este produto está licenciado para:</span></div>
+          <div><b>Ewerton Guimarães</b></div>
+          <div><b>Senior Software Engineer</b></div>
+        </div>
+        <div class="about-key">
+          <div class="lbl" data-i18n="about_keylbl">Chave do Produto:</div>
+          <div class="val">THMPV-77D6F-94376-8HGKG-VRDRQ</div>
+        </div>
+        <p class="about-copy" data-i18n="about_copy">Memória física disponível: 6+ anos de experiência. Copyright © 2026 Ewerton Guimarães. Feito com café e .NET.</p>
+        <div class="btn-row" style="justify-content:flex-end;margin-top:4px"><button class="btn btn--default" type="button" data-act="close-parent">OK</button></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Menu Iniciar -->
+<div class="start-menu" id="startMenu" role="menu" aria-label="Menu Iniciar">
+  <div class="start-menu__header">
+    <div class="start-menu__avatar"><img src="assets/perfil.png" alt="Ewerton"></div>
+    <span class="start-menu__user">Ewerton Guimarães</span>
+  </div>
+  <div class="start-menu__body">
+    <div class="start-col start-col--left">
+      <button class="start-item" type="button" role="menuitem" data-nav="win-welcome"><svg class="start-item__ico"><use href="#ic-computer"/></svg> <span data-i18n="si_inicio">Início <small data-i18n="si_inicio_s">Página inicial do portfólio</small></span></button>
+      <button class="start-item" type="button" role="menuitem" data-nav="win-sobre"><svg class="start-item__ico"><use href="#ic-user"/></svg> <span data-i18n="si_sobre">Sobre Mim <small data-i18n="si_sobre_s">Bloco de Notas</small></span></button>
+      <button class="start-item" type="button" role="menuitem" data-nav="win-skills"><svg class="start-item__ico"><use href="#ic-gear"/></svg> <span data-i18n="si_skills">Habilidades <small data-i18n="si_skills_s">Painel de Controle</small></span></button>
+      <div class="start-sep"></div>
+      <button class="start-item" type="button" role="menuitem" data-nav="win-cv"><svg class="start-item__ico"><use href="#ic-cv"/></svg> <span data-i18n="si_cv">Currículo <small data-i18n="si_cv_s">Experiência e formação</small></span></button>
+      <button class="start-item" type="button" role="menuitem" data-nav="win-projetos"><svg class="start-item__ico"><use href="#ic-folder"/></svg> <span data-i18n="si_proj">Projetos <small>C:\Projetos</small></span></button>
+      <button class="start-item" type="button" role="menuitem" data-nav="win-contato"><svg class="start-item__ico"><use href="#ic-msn"/></svg> <span data-i18n="si_contato">Contato <small data-i18n="si_contato_s">Catálogo de Endereços</small></span></button>
+      <div class="start-sep"></div>
+      <button class="start-item" type="button" role="menuitem" data-nav="win-ativa"><svg class="start-item__ico"><use href="#ic-key"/></svg> <span data-i18n="si_ativa">Sobre o Windows <small data-i18n="si_ativa_s">Informações do sistema</small></span></button>
+    </div>
+    <div class="start-col start-col--right">
+      <div class="start-col__cap" data-i18n="cap_links">Links</div>
+      <a class="start-item" role="menuitem" href="https://github.com/ewerton336/" target="_blank" rel="noopener"><svg class="start-item__ico"><use href="#ic-github"/></svg> GitHub</a>
+      <a class="start-item" role="menuitem" href="https://www.linkedin.com/in/ewerton-guimaraes/" target="_blank" rel="noopener"><svg class="start-item__ico"><use href="#ic-linkedin"/></svg> LinkedIn</a>
+      <a class="start-item" role="menuitem" href="https://wa.me/5513997827870" target="_blank" rel="noopener"><svg class="start-item__ico"><use href="#ic-wa"/></svg> WhatsApp</a>
+      <a class="start-item" role="menuitem" href="mailto:ewertonguimaraes2@gmail.com"><svg class="start-item__ico"><use href="#ic-mail"/></svg> <span data-i18n="c_email">E-mail</span></a>
+      <div class="start-sep"></div>
+      <a class="start-item" role="menuitem" href="https://github.com/ewerton336/RockwellTagReader" target="_blank" rel="noopener"><svg class="start-item__ico"><use href="#ic-plc"/></svg> RockwellTagReader</a>
+    </div>
+  </div>
+  <div class="start-menu__footer">
+    <button class="start-foot-btn" type="button" data-nav="win-welcome"><svg class="foot-ico foot-ico--logoff"><use href="#ic-key"/></svg> <span data-i18n="logoff">Fazer logoff</span></button>
+    <button class="start-foot-btn" type="button" data-shutdown><svg class="foot-ico foot-ico--off"><use href="#ic-power"/></svg> <span data-i18n="shutdown_btn">Desligar</span></button>
+  </div>
+</div>
+
+<!-- Barra de tarefas -->
+<footer class="taskbar">
+  <button class="start-btn" id="startBtn" type="button" aria-haspopup="true" aria-expanded="false">
+    <svg class="flag" viewBox="0 0 22 20" aria-hidden="true"><g transform="skewX(-9)"><path d="M2 1h8v8H2z" fill="#f24b3d"/><path d="M11 1h8v8h-8z" fill="#57c65a"/><path d="M2 10h8v8H2z" fill="#2f9bf0"/><path d="M11 10h8v8h-8z" fill="#ffcc21"/></g></svg>
+    <span data-i18n="start">iniciar</span>
+  </button>
+  <div class="taskbar__apps" id="taskbarApps"></div>
+  <div class="tray">
+    <div class="lang" id="lang">
+      <button class="lang__btn" id="langBtn" type="button" aria-haspopup="true" aria-expanded="false" title="Idioma / Language"><svg class="lang__flag" id="langFlag"><use href="#fl-br"/></svg><span id="langCode">PT</span></button>
+      <div class="lang__menu" role="menu">
+        <button class="lang__item" type="button" data-lang="pt" role="menuitem"><svg class="lang__flag"><use href="#fl-br"/></svg> Português</button>
+        <button class="lang__item" type="button" data-lang="en" role="menuitem"><svg class="lang__flag"><use href="#fl-us"/></svg> English</button>
+      </div>
+    </div>
+    <svg class="tray__ico" aria-hidden="true"><use href="#ic-vol"/></svg>
+    <span id="clock">--:--</span>
+  </div>
+</footer>
+
+<!-- Desligar -->
+<div class="shutdown" id="shutdown" role="dialog" aria-modal="true" aria-label="Desligar">
+  <div class="shutdown__logo">
+    <svg class="flag" viewBox="0 0 22 20" aria-hidden="true"><g transform="skewX(-9)"><path d="M2 1h8v8H2z" fill="#f24b3d"/><path d="M11 1h8v8h-8z" fill="#57c65a"/><path d="M2 10h8v8H2z" fill="#2f9bf0"/><path d="M11 10h8v8h-8z" fill="#ffcc21"/></g></svg>
+    <b>Ewerton<i>XP</i></b>
+  </div>
+  <div class="shutdown__rule"></div>
+  <h2 data-i18n="sd_title">O Windows está sendo encerrado...</h2>
+  <p data-i18n="sd_msg">Foi um prazer ter você por aqui. Obrigado pela visita! 👋</p>
+  <button class="btn" type="button" id="powerBack" data-i18n="sd_back">Ligar novamente</button>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var qsa = function(s, r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+  var startBtn=document.getElementById('startBtn'), startMenu=document.getElementById('startMenu');
+  var taskbarApps=document.getElementById('taskbarApps'), clockEl=document.getElementById('clock');
+  var shutdown=document.getElementById('shutdown');
+  var windows=qsa('.win'), taskButtons={}, active=null, zTop=20, openedCount=0;
+
+  /* ---------- i18n ---------- */
+  var I18N={
+    pt:{
+      _title:"Ewerton Guimarães — Senior Software Engineer",
+      desk_inicio:"Início",desk_sobre:"Sobre Mim",desk_skills:"Habilidades",desk_exp:"Currículo",desk_proj:"Projetos",desk_contato:"Contato",
+      task_welcome:"Bem-vindo",task_sobre:"Sobre Mim",task_skills:"Habilidades",task_exp:"Currículo",task_proj:"Projetos",task_contato:"Contato",task_ativa:"Sobre o Windows",
+      title_welcome:"Bem-vindo — Ewerton.exe",title_sobre:"Sobre Mim — Bloco de Notas",title_skills:"Habilidades — Painel de Controle",title_cv:"Currículo — Meu Computador",title_proj:"Projetos — C:\\Projetos",title_contato:"MSN Messenger",title_ativa:"Sobre o Windows",
+      welcome_tagline:"Engenheiro de software sênior com 6+ anos criando sistemas de missão crítica — do backend .NET às interfaces Angular/React, com integração industrial (PLCs Rockwell) e IA aplicada.",
+      btn_projetos:"Ver Projetos",btn_cv:"Currículo",btn_contato:"Contato",
+      status_ready:"Pronto",status_hint:"Clique nos ícones da área de trabalho para abrir cada janela",
+      menu_file:"<u>A</u>rquivo",menu_edit:"<u>E</u>ditar",menu_format:"For<u>m</u>atar",menu_view:"E<u>x</u>ibir",menu_help:"Aj<u>u</u>da",
+      sobre_p1:"Sou Ewerton Guimarães, Senior Software Engineer com 6+ anos de experiência no desenvolvimento de sistemas para ambientes de missão crítica. Atuo no desenvolvimento e na modernização de aplicações com .NET (Core/Framework) e Angular, com foco em alta disponibilidade, performance e confiabilidade.",
+      sobre_p2:"Tenho experiência na integração com sistemas industriais, incluindo comunicação com PLCs (Rockwell) e processamento de dados em tempo real. Aplico Inteligência Artificial de forma prática no dia a dia: agentes de IA para acelerar o desenvolvimento, automação de tarefas e integração de LLMs (incluindo RAG) em soluções reais.",
+      sobre_p3:"Cheguei a construir do zero um driver de comunicação para PLC usando IA como par técnico, derrubando barreiras de custo e conhecimento. Forte atuação em modernização de sistemas legados, arquitetura de software e APIs escaláveis.",
+      skills_hint:"Tecnologias que uso no dia a dia:",cat_backend:"Backend",cat_frontend:"Frontend",cat_data:"Banco de Dados",cat_devops:"DevOps, IA & Automação",
+      cv_exp:"Experiência Profissional",cv_edu:"Formação Acadêmica",cv_cert:"Licenças & Certificações",cv_now:"atual",
+      job1_role:"Senior Software Engineer · Automação Industrial",job1_b1:"Sistemas de alta disponibilidade (nível N2) para ambientes industriais",job1_b2:"Modernização de aplicações legadas com .NET 10 e Angular",job1_b3:"Integração com PLCs Rockwell e processamento de dados em tempo real",job1_b4:"Arquiteturas escaláveis e resilientes; APIs e serviços de backend",
+      job2_role:"Desenvolvedor de Software",job2_b1:"Mentoria de desenvolvedores juniores e estagiários",job2_b2:"COD — Certificado de Origem Digital: React/Next.js, Angular, .NET, EF, ABP.IO, Oracle e SQL Server",job2_b3:"EFD-Reinf: ASP.NET MVC, Azure DevOps, FluentValidation e AutoMapper",job2_b4:"Microserviços em .NET Core, CI/CD, TDD e DDD",
+      edu1_t:"Tecnólogo em Análise e Desenvolvimento de Sistemas",edu2_t:"MBA — Segurança da Informação",cert3:"Scrum · Metodologias Ágeis",
+      back:"Voltar",address:"Endereço",code:"Código",proj_all:"Ver todos os repositórios",
+      proj_hint:"Alguns dos meus projetos — todos disponíveis no GitHub. Clique em “Código” para abrir o repositório.",
+      proj1_desc:"Cliente EtherNet/IP + CIP 100% em C# para CLPs Allen-Bradley (ControlLogix/CompactLogix), sem dependências nativas. Faz browse completo das tags (inclusive UDTs) e leitura/escrita em lote em milissegundos. Economiza US$ 500 por máquina em licenças.",
+      proj2_desc:"Painel digital de avisos para elevadores: busca notícias do dia, exibe previsão do tempo e permite ao síndico publicar avisos, fotos e vídeos — acabando com o papel colado no elevador. Front em React, backend em .NET.",
+      proj3_desc:"API de receitas construída com SQLite e Command Handler, aplicando o padrão CQRS para separar comandos e consultas de forma limpa e testável.",
+      proj4_desc:"Extrai arquivos no formato ZPL de pastas compactadas e envia automaticamente para impressão de etiquetas — automação de um fluxo manual e repetitivo de chão de fábrica.",
+      proj5_desc:"API para consulta e exibição da Tabela FIPE, consumindo a fonte oficial e expondo os dados de forma organizada para o front-end.",
+      proj6_desc:"Configurações e presets pessoais para Claude Code / OpenClaude — automação do meu fluxo de desenvolvimento com agentes de IA.",
+      c_email:"E-mail",contact_note:"© 2026 Ewerton Guimarães — Praia Grande, SP · reimaginado no estilo Windows XP.",msn_m_contacts:"Cont<u>a</u>tos",msn_m_actions:"<u>A</u>ções",msn_m_tools:"<u>F</u>erramentas",msn_online:"(Online)",msn_psm:"Senior Software Engineer · aberto a novas conexões",msn_note:"Clique em um contato para falar comigo — abre no aplicativo correspondente.",msn_add:"Adicionar um contato",msn_group:"Meus Contatos (4/4 online)",
+      about_ver:"Versão 5.1 (Build 2026 · portfolio_sp3)",about_reg:"Este produto está licenciado para:",about_keylbl:"Chave do Produto:",about_copy:"Memória física disponível: 6+ anos de experiência. Copyright © 2026 Ewerton Guimarães. Feito com café e .NET.",
+      si_inicio:"Início",si_inicio_s:"Página inicial do portfólio",si_sobre:"Sobre Mim",si_sobre_s:"Bloco de Notas",si_skills:"Habilidades",si_skills_s:"Painel de Controle",si_cv:"Currículo",si_cv_s:"Experiência e formação",si_proj:"Projetos",si_contato:"Contato",si_contato_s:"Catálogo de Endereços",si_ativa:"Sobre o Windows",si_ativa_s:"Informações do sistema",cap_links:"Links",
+      logoff:"Fazer logoff",shutdown_btn:"Desligar",start:"iniciar",
+      sd_title:"O Windows está sendo encerrado...",sd_msg:"Foi um prazer ter você por aqui. Obrigado pela visita! 👋",sd_back:"Ligar novamente"
+    },
+    en:{
+      _title:"Ewerton Guimarães — Senior Software Engineer",
+      desk_inicio:"Home",desk_sobre:"About Me",desk_skills:"Skills",desk_exp:"Résumé",desk_proj:"Projects",desk_contato:"Contact",
+      task_welcome:"Welcome",task_sobre:"About Me",task_skills:"Skills",task_exp:"Résumé",task_proj:"Projects",task_contato:"Contact",task_ativa:"About Windows",
+      title_welcome:"Welcome — Ewerton.exe",title_sobre:"About Me — Notepad",title_skills:"Skills — Control Panel",title_cv:"Résumé — My Computer",title_proj:"Projects — C:\\Projects",title_contato:"MSN Messenger",title_ativa:"About Windows",
+      welcome_tagline:"Senior software engineer with 6+ years building mission-critical systems — from .NET back ends to Angular/React front ends, with industrial integration (Rockwell PLCs) and applied AI.",
+      btn_projetos:"View Projects",btn_cv:"Résumé",btn_contato:"Contact",
+      status_ready:"Ready",status_hint:"Click the desktop icons to open each window",
+      menu_file:"<u>F</u>ile",menu_edit:"<u>E</u>dit",menu_format:"F<u>o</u>rmat",menu_view:"<u>V</u>iew",menu_help:"<u>H</u>elp",
+      sobre_p1:"I'm Ewerton Guimarães, a Senior Software Engineer with 6+ years of experience building systems for mission-critical environments. I develop and modernize applications with .NET (Core/Framework) and Angular, focused on high availability, performance and reliability.",
+      sobre_p2:"I have experience integrating with industrial systems, including communication with PLCs (Rockwell) and real-time data processing. I apply AI practically every day: AI agents to speed up development, task automation and LLM integration (including RAG) in real solutions.",
+      sobre_p3:"I even built a PLC communication driver from scratch using AI as a technical pair, breaking down cost and knowledge barriers. Strong background in legacy modernization, software architecture and scalable APIs.",
+      skills_hint:"Technologies I use every day:",cat_backend:"Backend",cat_frontend:"Frontend",cat_data:"Databases",cat_devops:"DevOps, AI & Automation",
+      cv_exp:"Work Experience",cv_edu:"Education",cv_cert:"Licenses & Certifications",cv_now:"present",
+      job1_role:"Senior Software Engineer · Industrial Automation",job1_b1:"High-availability systems (N2 level) for industrial environments",job1_b2:"Modernization of legacy applications with .NET 10 and Angular",job1_b3:"Integration with Rockwell PLCs and real-time data processing",job1_b4:"Scalable, resilient architectures; back-end APIs and services",
+      job2_role:"Software Developer",job2_b1:"Mentoring of junior developers and interns",job2_b2:"COD — Digital Certificate of Origin: React/Next.js, Angular, .NET, EF, ABP.IO, Oracle and SQL Server",job2_b3:"EFD-Reinf: ASP.NET MVC, Azure DevOps, FluentValidation and AutoMapper",job2_b4:"Microservices in .NET Core, CI/CD, TDD and DDD",
+      edu1_t:"Technologist in Systems Analysis and Development",edu2_t:"MBA — Information Security",cert3:"Scrum · Agile Methodologies",
+      back:"Back",address:"Address",code:"Code",proj_all:"View all repositories",
+      proj_hint:"A few of my projects — all available on GitHub. Click “Code” to open the repository.",
+      proj1_desc:"Pure-C# EtherNet/IP + CIP client for Allen-Bradley PLCs (ControlLogix/CompactLogix), with zero native dependencies. Full tag browsing (including UDTs) and batch read/write in milliseconds. Saves US$ 500 per machine in licenses.",
+      proj2_desc:"Digital notice board for elevators: pulls the day's news, shows the weather forecast and lets the building manager post notices, photos and videos — replacing paper taped inside the elevator. React front end, .NET back end.",
+      proj3_desc:"Recipes API built with SQLite and a Command Handler, applying the CQRS pattern to cleanly separate commands and queries in a testable way.",
+      proj4_desc:"Extracts ZPL files from zipped folders and automatically sends them to label printing — automating a manual, repetitive shop-floor workflow.",
+      proj5_desc:"API to query and display the FIPE table, consuming the official source and exposing the data in an organized way for the front end.",
+      proj6_desc:"Personal configs and presets for Claude Code / OpenClaude — automating my development workflow with AI agents.",
+      c_email:"E-mail",contact_note:"© 2026 Ewerton Guimarães — Praia Grande, Brazil · reimagined in Windows XP style.",msn_m_contacts:"Cont<u>a</u>cts",msn_m_actions:"<u>A</u>ctions",msn_m_tools:"<u>T</u>ools",msn_online:"(Online)",msn_psm:"Senior Software Engineer · open to new connections",msn_note:"Click a contact to reach me — opens in the matching app.",msn_add:"Add a Contact",msn_group:"My Contacts (4/4 online)",
+      about_ver:"Version 5.1 (Build 2026 · portfolio_sp3)",about_reg:"This product is licensed to:",about_keylbl:"Product Key:",about_copy:"Available physical memory: 6+ years of experience. Copyright © 2026 Ewerton Guimarães. Made with coffee and .NET.",
+      si_inicio:"Home",si_inicio_s:"Portfolio home page",si_sobre:"About Me",si_sobre_s:"Notepad",si_skills:"Skills",si_skills_s:"Control Panel",si_cv:"Résumé",si_cv_s:"Experience and education",si_proj:"Projects",si_contato:"Contact",si_contato_s:"Address Book",si_ativa:"About Windows",si_ativa_s:"System information",cap_links:"Links",
+      logoff:"Log Off",shutdown_btn:"Turn Off",start:"start",
+      sd_title:"Windows is shutting down...",sd_msg:"It was a pleasure having you here. Thanks for visiting! 👋",sd_back:"Turn on again"
+    }
+  };
+  var LANG_META={pt:{code:"PT",flag:"#fl-br",html:"pt-BR"},en:{code:"EN",flag:"#fl-us",html:"en"}};
+  var curLang="pt";
+  function applyLang(lang){
+    if(!I18N[lang]) lang="pt";
+    curLang=lang;
+    var dict=I18N[lang];
+    qsa('[data-i18n]').forEach(function(el){
+      var k=el.getAttribute('data-i18n'); if(dict[k]==null) return;
+      var sm=el.querySelector('small');
+      if(sm){
+        var smk=sm.getAttribute('data-i18n');
+        el.childNodes[0].nodeValue=dict[k]+' ';
+        if(smk&&dict[smk]!=null) sm.textContent=dict[smk];
+        return;
+      }
+      if(dict[k].indexOf('<')>=0) el.innerHTML=dict[k];
+      else el.textContent=dict[k];
+    });
+    var meta=LANG_META[lang];
+    document.documentElement.lang=meta.html;
+    document.title=dict._title;
+    document.getElementById('langCode').textContent=meta.code;
+    document.getElementById('langFlag').firstElementChild.setAttribute('href',meta.flag);
+    qsa('.lang__item').forEach(function(b){ b.classList.toggle('is-cur',b.getAttribute('data-lang')===lang); });
+    windows.forEach(function(win){ var b=taskButtons[win.id]; if(b){ var tk=win.getAttribute('data-task'); b.querySelector('span:last-child').textContent=dict[tk]||tk; } });
+    try{ localStorage.setItem('xp_lang',lang); }catch(e){}
+  }
+  var langBox=document.getElementById('lang'), langBtn=document.getElementById('langBtn');
+  langBtn.addEventListener('click',function(e){ e.stopPropagation(); langBox.classList.toggle('is-open'); });
+  qsa('.lang__item').forEach(function(b){ b.addEventListener('click',function(){ applyLang(b.getAttribute('data-lang')); langBox.classList.remove('is-open'); }); });
+
+  /* ---------- Relógio ---------- */
+  function tick(){ var d=new Date(); clockEl.textContent=('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2); }
+  tick(); setInterval(tick,10000);
+
+  /* ---------- Janelas ---------- */
+  function isMobile(){ return window.matchMedia('(max-width:760px)').matches; }
+  function taskbarH(){ var t=parseInt(getComputedStyle(document.documentElement).getPropertyValue('--taskbar'),10); return isNaN(t)?40:t; }
+  function isVisible(win){ return win.classList.contains('is-open'); }
+  function isTasked(win){ return win.classList.contains('is-open')||win.classList.contains('is-min'); }
+  function focusWin(win){ windows.forEach(function(w){ w.classList.toggle('is-active',w===win); }); win.style.zIndex=(++zTop); active=win; updateTaskbar(); }
+  function placeWindow(win){
+    if(win.dataset.placed==='1'||isMobile()) return;
+    var w=win.offsetWidth,h=win.offsetHeight,deskH=window.innerHeight-taskbarH();
+    var i=(openedCount++)%6;
+    var left=Math.round((window.innerWidth-w)/2+i*26-40), top=Math.round((deskH-h)/2+i*22-24);
+    left=Math.max(8,Math.min(left,window.innerWidth-w-8)); top=Math.max(8,Math.min(top,deskH-44));
+    win.style.left=left+'px'; win.style.top=top+'px'; win.dataset.placed='1';
+  }
+  function openWin(win){ win.classList.remove('is-min'); win.classList.add('is-open'); placeWindow(win); focusWin(win); }
+  function minimize(win){ win.classList.remove('is-open'); win.classList.add('is-min'); if(active===win) active=null; updateTaskbar(); }
+  function closeWin(win){ win.classList.remove('is-open','is-min','is-max'); if(active===win) active=null; updateTaskbar(); }
+  function toggleMax(win){ win.classList.toggle('is-max'); focusWin(win); }
+  function updateTaskbar(){ windows.forEach(function(win){ var btn=taskButtons[win.id]; if(!btn) return; btn.style.display=isTasked(win)?'':'none'; btn.classList.toggle('is-pressed',win===active&&isVisible(win)); }); }
+
+  windows.forEach(function(win){
+    win.addEventListener('pointerdown',function(){ if(isVisible(win)) focusWin(win); });
+    qsa('.title-btn',win).forEach(function(b){
+      b.addEventListener('click',function(e){ e.stopPropagation(); var act=b.getAttribute('data-act');
+        if(act==='min') minimize(win); else if(act==='max') toggleMax(win); else if(act==='close') closeWin(win); });
+    });
+    qsa('[data-act="close-parent"]',win).forEach(function(b){ b.addEventListener('click',function(){ closeWin(win); }); });
+  });
+
+  windows.forEach(function(win){
+    var title=win.querySelector('.win__title');
+    title.addEventListener('pointerdown',function(e){
+      if(e.target.closest('.title-btn')) return;
+      if(isMobile()||win.classList.contains('is-max')) return;
+      e.preventDefault(); focusWin(win);
+      var rect=win.getBoundingClientRect(), offX=e.clientX-rect.left, offY=e.clientY-rect.top, deskH=window.innerHeight-taskbarH();
+      function move(ev){ var nx=ev.clientX-offX,ny=ev.clientY-offY; nx=Math.max(-win.offsetWidth+90,Math.min(nx,window.innerWidth-90)); ny=Math.max(4,Math.min(ny,deskH-30)); win.style.left=nx+'px'; win.style.top=ny+'px'; win.dataset.placed='1'; }
+      function up(){ document.removeEventListener('pointermove',move); document.removeEventListener('pointerup',up); }
+      document.addEventListener('pointermove',move); document.addEventListener('pointerup',up);
+    });
+  });
+
+  windows.forEach(function(win){
+    var taskKey=win.getAttribute('data-task'), icoId=win.getAttribute('data-icon');
+    var btn=document.createElement('button'); btn.className='taskbar-btn'; btn.type='button'; btn.style.display='none';
+    btn.innerHTML='<span class="taskbar-btn__ico"><svg width="16" height="16"><use href="#'+icoId+'"/></svg></span><span>'+(I18N.pt[taskKey]||'')+'</span>';
+    btn.addEventListener('click',function(){ if(win.classList.contains('is-min')) openWin(win); else if(active===win) minimize(win); else openWin(win); });
+    taskbarApps.appendChild(btn); taskButtons[win.id]=btn;
+  });
+
+  qsa('[data-nav]').forEach(function(el){
+    el.addEventListener('click',function(e){ var win=document.getElementById(el.getAttribute('data-nav')); if(win){ e.preventDefault(); openWin(win); } closeStart(); });
+  });
+
+  function openStart(){ startMenu.classList.add('is-open'); startBtn.classList.add('is-pressed'); startBtn.setAttribute('aria-expanded','true'); }
+  function closeStart(){ startMenu.classList.remove('is-open'); startBtn.classList.remove('is-pressed'); startBtn.setAttribute('aria-expanded','false'); }
+  startBtn.addEventListener('click',function(e){ e.stopPropagation(); if(startMenu.classList.contains('is-open')) closeStart(); else openStart(); });
+  document.addEventListener('click',function(e){
+    if(startMenu.classList.contains('is-open')&&!startMenu.contains(e.target)&&e.target!==startBtn) closeStart();
+    if(langBox.classList.contains('is-open')&&!langBox.contains(e.target)) langBox.classList.remove('is-open');
+  });
+
+  qsa('[data-shutdown]').forEach(function(el){ el.addEventListener('click',function(e){ e.preventDefault(); shutdown.classList.add('is-open'); closeStart(); }); });
+  document.getElementById('powerBack').addEventListener('click',function(){ shutdown.classList.remove('is-open'); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ closeStart(); shutdown.classList.remove('is-open'); langBox.classList.remove('is-open'); } });
+
+  window.addEventListener('resize',function(){
+    if(isMobile()) return; var deskH=window.innerHeight-taskbarH();
+    windows.forEach(function(win){ if(!isVisible(win)||win.classList.contains('is-max')) return;
+      var left=parseInt(win.style.left,10)||0, top=parseInt(win.style.top,10)||0;
+      left=Math.max(8,Math.min(left,window.innerWidth-win.offsetWidth-8)); top=Math.max(8,Math.min(top,deskH-44));
+      win.style.left=left+'px'; win.style.top=top+'px';
+    });
+  });
+
+  /* ---------- Init ---------- */
+  var saved=null; try{ saved=localStorage.getItem('xp_lang'); }catch(e){}
+  var initLang=saved||((navigator.language||'pt').slice(0,2).toLowerCase());
+  applyLang(I18N[initLang]?initLang:'pt');
+  openWin(document.getElementById('win-welcome'));
+  updateTaskbar();
+})();
+</script>
+</body>
 </html>
